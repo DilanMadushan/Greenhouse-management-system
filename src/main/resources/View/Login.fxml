@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: FFFFF;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.Controller.LoginController">
+   <children>
+      <AnchorPane prefHeight="727.0" prefWidth="849.0">
+         <children>
+            <ImageView fitHeight="727.0" fitWidth="820.0" layoutX="54.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/9372018.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="812.0" prefHeight="721.0" prefWidth="468.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Label layoutX="158.0" layoutY="132.0" prefHeight="58.0" prefWidth="121.0" text="Login" textFill="#00c9b7">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtNmae" labelFloat="true" layoutX="79.0" layoutY="243.0" prefHeight="34.0" prefWidth="294.0" promptText="Username">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtPassword" labelFloat="true" layoutX="79.0" layoutY="327.0" prefHeight="34.0" prefWidth="294.0" promptText="Password">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton layoutX="172.0" layoutY="453.0" onAction="#loginOnAction" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #09ADA8;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="59.0" layoutY="556.0" prefHeight="34.0" prefWidth="334.0" text="&quot;If there is a future, it will be Green&quot;" textFill="#00c9b7">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="34.0" fitWidth="29.0" layoutX="423.0" layoutY="10.0" onMouseClicked="#closeOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/icons8-close-50 (1).png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

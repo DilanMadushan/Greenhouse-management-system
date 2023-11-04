@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root1" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.Controller.DashBoardController">
+   <children>
+      <Label layoutX="182.0" layoutY="22.0" prefHeight="45.0" prefWidth="213.0" text="Welcome back">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Pane layoutX="-43.0" layoutY="16.0" prefHeight="689.0" prefWidth="180.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 50;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="24.0" onAction="#LettuceOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="48.0" layoutX="11.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-lettuce-100.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="13.0" layoutY="47.0" prefHeight="20.0" prefWidth="48.0" text="Lettuce" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="100.0" onAction="#greenhouseOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <Label layoutY="45.0" prefHeight="20.0" prefWidth="75.0" text="Greenhouse" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="45.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-greenhouse-60.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="178.0" onAction="#fertilizerOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <Label layoutX="8.0" layoutY="46.0" prefHeight="20.0" prefWidth="54.0" text="Fertilizer" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="40.0" fitWidth="48.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-fertilizer-64.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="257.0" onAction="#employeeOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;" text="Button">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <Label layoutX="6.0" layoutY="44.0" prefHeight="20.0" prefWidth="62.0" text="Employee" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="11.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-employee-100.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="337.0" onAction="#supplairOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="46.0" prefHeight="20.0" prefWidth="62.0" text="Supplair" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-supplier-100.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="415.0" onAction="#customerOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <Label layoutX="7.0" layoutY="45.0" prefHeight="20.0" prefWidth="62.0" text="Customer" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="17.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-customer-100.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="495.0" onAction="#orderOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <Label layoutX="17.0" layoutY="46.0" prefHeight="20.0" prefWidth="40.0" text="Order" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="15.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-order-100.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="577.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <Pane prefHeight="70.0" prefWidth="70.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="46.0" prefHeight="20.0" prefWidth="62.0" text="Payment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Assets/icons8-payment-100.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="155.0" layoutY="88.0" prefHeight="584.0" prefWidth="1099.0" style="-fx-background-radius: 30; -fx-background-color: white;" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+         <children>
+            <Pane layoutX="46.0" layoutY="43.0" prefHeight="153.0" prefWidth="281.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.bottomAnchor="356.0" AnchorPane.topAnchor="75.0">
+               <children>
+                  <Text layoutX="115.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Greenhouses" textAlignment="CENTER" wrappingWidth="167.4404296874999">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="128.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                     <font>
+                        <Font size="68.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="116.0" fitWidth="130.0" layoutX="11.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icons8-greenhouse-100.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="393.0" layoutY="27.0" prefHeight="153.0" prefWidth="281.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.topAnchor="75.0">
+               <children>
+                  <Text layoutX="127.0" layoutY="103.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Employees" textAlignment="CENTER" wrappingWidth="146.4404296875">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" layoutX="129.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                     <font>
+                        <Font size="68.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="108.0" fitWidth="97.0" layoutX="33.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icons8-employees-100.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="752.0" layoutY="27.0" prefHeight="153.0" prefWidth="287.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.topAnchor="75.0">
+               <children>
+                  <Text layoutX="148.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Orders" textAlignment="CENTER" wrappingWidth="108.0">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="132.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                     <font>
+                        <Font size="68.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="23.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icons8-customers-100%2520(1).png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="46.0" layoutY="344.0" prefHeight="153.0" prefWidth="287.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.bottomAnchor="112.0">
+               <children>
+                  <Text layoutX="120.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Customerss" textAlignment="CENTER" wrappingWidth="155.4404296875">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="122.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                     <font>
+                        <Font size="68.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="17.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icons8-customers-100%2520(1).png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="406.0" layoutY="343.0" prefHeight="153.0" prefWidth="287.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.bottomAnchor="112.0">
+               <children>
+                  <Text layoutX="140.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Notifition" textAlignment="CENTER" wrappingWidth="127.4404296875">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="128.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                     <font>
+                        <Font size="68.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="100.0" fitWidth="97.0" layoutX="32.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icons8-messages-100.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="760.0" layoutY="337.0" prefHeight="153.0" prefWidth="287.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.bottomAnchor="112.0">
+               <children>
+                  <Text layoutX="129.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Lattuce Types" textAlignment="CENTER" wrappingWidth="139.7607421874999">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="127.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                     <font>
+                        <Font size="68.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icons8-lettuce-100.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1025.0" layoutY="515.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/icons8-back-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="1060.0" layoutY="15.0" prefHeight="70.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.rightAnchor="40.0">
+         <children>
+            <Text fx:id="txtTime" layoutX="21.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00">
+               <font>
+                  <Font name="System Bold" size="35.0" />
+               </font>
+            </Text>
+            <Text fx:id="txtDate" layoutX="45.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2023.11.02">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text fill="#00c9b7" layoutX="775.0" layoutY="68.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" textAlignment="RIGHT" wrappingWidth="263.0">
+         <font>
+            <Font name="System Bold" size="49.0" />
+         </font>
+      </Text>
+      <JFXButton buttonType="RAISED" layoutX="585.0" layoutY="42.0" onAction="#notifyOnAction" prefHeight="45.0" prefWidth="54.0" style="-fx-background-color: #00C9B7;">
+         <font>
+            <Font size="1.0" />
+         </font>
+         <graphic>
+            <Pane prefHeight="45.0" prefWidth="54.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="9.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Assets/icons8-messages-100.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </graphic>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="464.0" layoutY="42.0" onAction="#aboutOnAction" prefHeight="45.0" prefWidth="87.0" style="-fx-background-color: #00C9B7;">
+         <font>
+            <Font size="1.0" />
+         </font>
+         <graphic>
+            <Pane prefHeight="45.0" prefWidth="87.0">
+               <children>
+                  <Label layoutX="5.0" layoutY="8.0" prefHeight="26.0" prefWidth="75.0" text="About us" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
