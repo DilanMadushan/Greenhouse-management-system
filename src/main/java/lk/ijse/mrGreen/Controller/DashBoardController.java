@@ -62,7 +62,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void LettuceOnAction(ActionEvent event) {
+    void LettuceOnAction(ActionEvent event) throws IOException {
+        Parent rootNode =FXMLLoader.load(getClass().getResource("/View/Lettuce_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
+
+        Scene scene=new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
 
     }
 
