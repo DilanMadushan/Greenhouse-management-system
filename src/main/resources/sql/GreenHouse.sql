@@ -33,7 +33,7 @@ create table lettuce(
   name varchar(100)not null ,
   Temp int not null ,
   humidity int not null ,
-  qty_on_hand int not null ,
+  qty_on_hand double not null ,
   sup_id varchar(30)not null ,
   constraint foreign key (sup_id) references supplier(sup_id)
   on update cascade on delete cascade
@@ -127,6 +127,8 @@ create table greenhouse_employee_details(
     on update cascade on delete cascade
 );
 
+
+insert into supplier values ("S001","Kamal","Green Lanka","0763458370","U001");
 
 
 

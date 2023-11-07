@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root1" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.Controller.DashBoardController">
+<AnchorPane fx:id="root1" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.DashBoardController">
    <children>
       <Label layoutX="182.0" layoutY="22.0" prefHeight="45.0" prefWidth="213.0" text="Welcome back">
          <font>
@@ -28,7 +28,7 @@
                      <children>
                         <ImageView fitHeight="45.0" fitWidth="48.0" layoutX="11.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-lettuce-100.png" />
+                              <Image url="@../assets/icons8-lettuce-100.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="13.0" layoutY="47.0" prefHeight="20.0" prefWidth="48.0" text="Lettuce" textFill="WHITE">
@@ -54,7 +54,7 @@
                         </Label>
                         <ImageView fitHeight="45.0" fitWidth="40.0" layoutX="14.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-greenhouse-60.png" />
+                              <Image url="@../assets/icons8-greenhouse-60.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -75,7 +75,7 @@
                         </Label>
                         <ImageView fitHeight="40.0" fitWidth="48.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-fertilizer-64.png" />
+                              <Image url="@../assets/icons8-fertilizer-64.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -96,7 +96,7 @@
                         </Label>
                         <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="11.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-employee-100.png" />
+                              <Image url="@../assets/icons8-employee-100.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -117,7 +117,7 @@
                         </Label>
                         <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-supplier-100.png" />
+                              <Image url="@../assets/icons8-supplier-100.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -138,7 +138,7 @@
                         </Label>
                         <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="17.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-customer-100.png" />
+                              <Image url="@../assets/icons8-customer-100.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -159,7 +159,7 @@
                         </Label>
                         <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="15.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-order-100.png" />
+                              <Image url="@../assets/icons8-order-100.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -180,7 +180,7 @@
                         </Label>
                         <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Assets/icons8-payment-100.png" />
+                              <Image url="@../assets/icons8-payment-100.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -205,7 +205,7 @@
                   </Text>
                   <ImageView fitHeight="116.0" fitWidth="130.0" layoutX="11.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icons8-greenhouse-100.png" />
+                        <Image url="@../assets/icons8-greenhouse-100.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -227,7 +227,7 @@
                   </Text>
                   <ImageView fitHeight="108.0" fitWidth="97.0" layoutX="33.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icons8-employees-100.png" />
+                        <Image url="@../assets/icons8-employees-100.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -249,7 +249,7 @@
                   </Text>
                   <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="23.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icons8-customers-100%2520(1).png" />
+                        <Image url="@../assets/icons8-customers-100%2520(1).png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -271,7 +271,7 @@
                   </Text>
                   <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="17.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icons8-customers-100%2520(1).png" />
+                        <Image url="@../assets/icons8-customers-100%2520(1).png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -293,7 +293,7 @@
                   </Text>
                   <ImageView fitHeight="100.0" fitWidth="97.0" layoutX="32.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icons8-messages-100.png" />
+                        <Image url="@../assets/icons8-messages-100.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -315,7 +315,7 @@
                   </Text>
                   <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="21.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icons8-lettuce-100.png" />
+                        <Image url="@../assets/icons8-lettuce-100.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -325,7 +325,7 @@
             </Pane>
             <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1025.0" layoutY="515.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Assets/icons8-back-64.png" />
+                  <Image url="@../assets/icons8-back-64.png" />
                </image>
             </ImageView>
          </children>
@@ -358,7 +358,7 @@
                <children>
                   <ImageView fitHeight="32.0" fitWidth="38.0" layoutX="10.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Assets/icons8-messages-100.png" />
+                        <Image url="@../assets/icons8-messages-100.png" />
                      </image>
                   </ImageView>
                </children>

@@ -1,4 +1,4 @@
-package lk.ijse.mrGreen.Controller;
+package lk.ijse.mrGreen.controller;
 
 public class NotificationFormController {
 }

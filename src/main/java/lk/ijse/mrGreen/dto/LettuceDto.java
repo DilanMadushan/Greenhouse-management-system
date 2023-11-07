@@ -7,12 +7,15 @@ public class LettuceDto {
     private String humid;
     private String qty;
 
-    public LettuceDto(String id, String name, String temp, String humid, String qty) {
+    private String suppName;
+
+    public LettuceDto(String id, String name, String temp, String humid, String qty, String suppName) {
         this.id = id;
         this.name = name;
         this.temp = temp;
         this.humid = humid;
         this.qty = qty;
+        this.suppName = suppName;
     }
 
     public String getId() {
@@ -55,4 +58,11 @@ public class LettuceDto {
         this.qty = qty;
     }
 
+    public String getSuppName() {
+        return suppName;
+    }
+
+    public void setSuppName(String suppName) {
+        this.suppName = suppName;
+    }
 }

@@ -1,20 +1,16 @@
-package lk.ijse.mrGreen.Controller;
+package lk.ijse.mrGreen.controller;
 
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import lk.ijse.mrGreen.dto.UserDto;
 import model.UserModel;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -39,7 +35,7 @@ public class LoginController {
             UserDto userDto = userModel.checkUser(name);
             if(userDto!=null){
                 if( name.equals(userDto.getName()) && password.equals(userDto.getPassword())){
-                    AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/DashBoard.fxml"));
+                    AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/view/DashBoard.fxml"));
                     Scene scene = new Scene(anchorPane);
 
                     Stage stage = (Stage) root.getScene().getWindow();

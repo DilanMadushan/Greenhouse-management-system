@@ -1,6 +1,5 @@
-package lk.ijse.mrGreen.Controller;
+package lk.ijse.mrGreen.controller;
 
-import com.jfoenix.controls.JFXTextField;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -13,7 +12,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -63,7 +61,7 @@ public class DashBoardController {
 
     @FXML
     void LettuceOnAction(ActionEvent event) throws IOException {
-        Parent rootNode =FXMLLoader.load(getClass().getResource("/View/Lettuce_Form.fxml"));
+        Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Lettuce_Form.fxml"));
         Stage stage = (Stage) root1.getScene().getWindow();
 
         Scene scene=new Scene(rootNode);
@@ -113,7 +111,7 @@ public class DashBoardController {
     }
     @FXML
     public void backOnAction(MouseEvent mouseEvent) throws IOException {
-        Parent rootNode =FXMLLoader.load(getClass().getResource("/View/Login.fxml"));
+        Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
         Stage stage = (Stage) root1.getScene().getWindow();
 
         Scene scene=new Scene(rootNode);

@@ -12,7 +12,7 @@ public class LettuceModel {
     public static boolean saveLettuce(LettuceDto dto) throws SQLException {
         Connection connection= DbConnection.getInstance().getConnection();
 
-        String sql = "INSERT INTO lettuce VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO lettuce VALUES(?,?,?,?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1,dto.getId());
@@ -20,6 +20,7 @@ public class LettuceModel {
         pstm.setString(3,dto.getHumid());
         pstm.setString(4,dto.getHumid());
         pstm.setString(5,dto.getQty());
+        pstm.setString(6,dto.getSuppName());
 
         Boolean isSaved = pstm.executeUpdate() > 0;
 
