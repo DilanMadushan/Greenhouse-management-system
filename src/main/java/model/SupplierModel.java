@@ -20,6 +20,7 @@ public class SupplierModel {
 
         List<SupplierDto> supList = new ArrayList<>();
 
+
         ResultSet resultSet = pstm.executeQuery();
         while (resultSet.next()){
             supList.add(new SupplierDto(

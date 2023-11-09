@@ -46,7 +46,7 @@ public class DashBoardController {
     }
 
     private void setDateandTime() {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> updateTime()));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.millis(100), event -> updateTime()));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 

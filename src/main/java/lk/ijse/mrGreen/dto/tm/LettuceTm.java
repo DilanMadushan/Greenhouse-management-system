@@ -1,4 +1,4 @@
-package lk.ijse.mrGreen.dto;
+package lk.ijse.mrGreen.dto.tm;
 
 import lombok.*;
 
@@ -7,8 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class LettuceDto {
-
+public class LettuceTm {
     private String id;
     private String name;
     private int temp;
@@ -16,6 +15,5 @@ public class LettuceDto {
     private double unit;
     private double qty;
     private String suppId;
-
 
 }

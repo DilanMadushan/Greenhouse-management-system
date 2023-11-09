@@ -34,6 +34,7 @@ create table lettuce(
   Temp int not null ,
   humidity int not null ,
   qty_on_hand double not null ,
+  unit_price double not null,
   sup_id varchar(30)not null ,
   constraint foreign key (sup_id) references supplier(sup_id)
   on update cascade on delete cascade
