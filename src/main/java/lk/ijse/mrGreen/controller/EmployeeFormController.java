@@ -77,12 +77,12 @@ public class EmployeeFormController {
     }
 
     public void clearFields(){
-        colId.setText("");
-        colName.setText("");
-        colAge.setText("");
-        colAddress.setText("");
-        colJob.setText("");
-        colSalary.setText("");
+        txtId.setText("");
+        txtName.setText("");
+        txtAge.setText("");
+        txtAddress.setText("");
+        txtJob.setText("");
+        txtSalary.setText("");
     }
 
     private void loadAllEpmloyee() {
