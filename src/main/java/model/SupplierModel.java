@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SupplierModel {
-    public static List<SupplierDto> loadAllSupplier() throws SQLException {
+    public List<SupplierDto> loadAllSupplier() throws SQLException {
 
         Connection connection = DbConnection.getInstance().getConnection();
 

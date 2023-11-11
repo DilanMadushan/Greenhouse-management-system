@@ -45,6 +45,7 @@ create table fertilizer(
     f_id varchar(30)primary key ,
     name varchar(100)not null ,
     company varchar(100)not null ,
+    unit DOUBLE not null,
     qty int not null ,
     sup_id varchar(30) not null ,
     l_id varchar(50)not null ,
@@ -130,6 +131,15 @@ create table greenhouse_employee_details(
 
 
 insert into supplier values ("S001","Kamal","Green Lanka","0763458370","U001");
+insert into supplier values ("S002","Nimal","jdbc","0764567890","U001");
+
+INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
+
+select * from fertilizer;
+
+DELETE FROM fertilizer WHERE id = "F001";
+
+UPDATE fertilizer SET name = ?, company = ?, unit = ?, qty = ?, sup_id = ?, l_id = ? WHERE f_id = ?
 
 
 

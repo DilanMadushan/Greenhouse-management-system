@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -40,6 +41,9 @@
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </JFXButton>
             <Label layoutX="59.0" layoutY="556.0" prefHeight="34.0" prefWidth="334.0" text="&quot;If there is a future, it will be Green&quot;" textFill="#00c9b7">
                <font>

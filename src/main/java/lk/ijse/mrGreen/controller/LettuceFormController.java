@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import lk.ijse.mrGreen.dto.LettuceDto;
 import lk.ijse.mrGreen.dto.SupplierDto;
@@ -30,6 +31,8 @@ public class LettuceFormController {
 
     @FXML
     public AnchorPane Anchor;
+    @FXML
+    private TableView<LettuceTm> tblLettuce;
 
     @FXML
     private JFXComboBox cmbSupId;
@@ -73,8 +76,9 @@ public class LettuceFormController {
     @FXML
     private TableColumn<?, ?> colUnit;
 
-    @FXML
-    private TableView<LettuceTm> tblLettuce;
+    SupplierModel suppModel = new SupplierModel();
+
+    LettuceModel lettModel = new LettuceModel();
 
 
     public void initialize(){
@@ -84,13 +88,13 @@ public class LettuceFormController {
     }
 
     private void setCellValuesFactory() {
-        colId.setCellValueFactory(new PropertyValueFactory<>("Id"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("Name"));
-//        colTemp.setCellValueFactory(new PropertyValueFactory<>("Temperature"));
-//        colHumid.setCellValueFactory(new PropertyValueFactory<>("Humidity"));
-//        colQty.setCellValueFactory(new PropertyValueFactory<>("Qty on hand"));
-//        colUnit.setCellValueFactory(new PropertyValueFactory<>("Unit Price"));
-//        colSupId.setCellValueFactory(new PropertyValueFactory<>("Sup Id"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colTemp.setCellValueFactory(new PropertyValueFactory<>("temp"));
+        colHumid.setCellValueFactory(new PropertyValueFactory<>("humid"));
+        colUnit.setCellValueFactory(new PropertyValueFactory<>("Unit"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colSupId.setCellValueFactory(new PropertyValueFactory<>("suppId"));
 
     }
     private void loadAllLettuce() {
@@ -98,7 +102,7 @@ public class LettuceFormController {
     ObservableList<LettuceTm> obList= FXCollections.observableArrayList();
 
         try {
-            List<LettuceDto> dto = LettuceModel.getAllLettuceDetails();
+            List<LettuceDto> dto = lettModel.getAllLettuceDetails();
 
             for (LettuceDto list: dto) {
                 obList.add(new LettuceTm(
@@ -106,12 +110,11 @@ public class LettuceFormController {
                         list.getName(),
                         list.getTemp(),
                         list.getHumid(),
-                        list.getQty(),
+                        list.getUnit(),
                         list.getQty(),
                         list.getSuppId()
                 ));
             }
-
             tblLettuce.setItems(obList);
 
         } catch (SQLException e) {
@@ -125,7 +128,7 @@ public class LettuceFormController {
 
 
         try {
-            List<SupplierDto> supDto = SupplierModel.loadAllSupplier();
+            List<SupplierDto> supDto = suppModel.loadAllSupplier();
             for (SupplierDto dto: supDto) {
                 obList.add(dto.getSup_id());
             }
@@ -152,13 +155,13 @@ public class LettuceFormController {
         var dto = new LettuceDto(id,name,temp,humid,qty,unit,suppId);
 
         try {
-            boolean isSaved=LettuceModel.saveLettuce(dto);
+            boolean isSaved=lettModel.saveLettuce(dto);
             if(isSaved){
                 new Alert(Alert.AlertType.CONFIRMATION,"Saved Successfully").show();
                 initialize();
                 clearFields();
             }else {
-                new Alert(Alert.AlertType.CONFIRMATION,"Save Failed").show();
+                new Alert(Alert.AlertType.WARNING,"Save Failed").show();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -171,7 +174,7 @@ public class LettuceFormController {
         String id=txtId.getText();
 
         try {
-            boolean isDelete =LettuceModel.deleteLettuce(id);
+            boolean isDelete =lettModel.deleteLettuce(id);
 
             if (isDelete) {
                 new Alert(Alert.AlertType.CONFIRMATION,"Delete Successfully").show();
@@ -199,7 +202,7 @@ public class LettuceFormController {
         var dto = new LettuceDto(id,name,temp,humid,qty,unit,suppId);
 
         try {
-            boolean isUpdated =LettuceModel.updateLettuce(dto);
+            boolean isUpdated =lettModel.updateLettuce(dto);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION,"Updated Successfully").show();
                 initialize();

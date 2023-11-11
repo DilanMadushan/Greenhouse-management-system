@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -47,16 +48,25 @@
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton layoutX="253.0" layoutY="585.0" onAction="#updateOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <JFXButton layoutX="444.0" layoutY="585.0" onAction="#removeOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #eb4d4b; -fx-background-radius: 20;" text="Remove" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
       <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1188.0" layoutY="23.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -13,8 +13,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import model.LettuceModel;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
@@ -29,16 +31,34 @@ public class DashBoardController {
 
     @FXML
     private Text txtTime;
+
+    @FXML
+    private Text txtLettuceCount;
     private int year;
     private int month;
     private int datee;
+
+    LettuceModel lettModel =new LettuceModel();
 
     @FXML
     private AnchorPane root1;
 
     public void initialize(){
         setDateandTime();
+        setLettuceCount();
     }
+
+    private void setLettuceCount() {
+
+        try {
+            String count = Integer.toString(lettModel.getCount());
+            txtLettuceCount.setText(count);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void updateTime() {
         LocalTime now = LocalTime.now();
         String formattedTime = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
@@ -86,7 +106,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void fertilizerOnAction(ActionEvent event) {
+    void fertilizerOnAction(ActionEvent event) throws IOException {
+        Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Fertilizer_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
+
+        Scene scene=new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
 
     }
 

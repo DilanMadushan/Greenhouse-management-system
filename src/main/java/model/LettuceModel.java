@@ -4,16 +4,13 @@ import com.sun.source.tree.WhileLoopTree;
 import lk.ijse.mrGreen.db.DbConnection;
 import lk.ijse.mrGreen.dto.LettuceDto;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LettuceModel {
 
-    public static boolean saveLettuce(LettuceDto dto) throws SQLException {
+    public boolean saveLettuce(LettuceDto dto) throws SQLException {
         Connection connection= DbConnection.getInstance().getConnection();
 
         String sql = "INSERT INTO lettuce VALUES(?,?,?,?,?,?,?)";
@@ -27,19 +24,23 @@ public class LettuceModel {
         pstm.setDouble(6,dto.getUnit());
         pstm.setString(7,dto.getSuppId());
 
-        boolean isSaved = pstm.executeUpdate() > 0;
+        try{
+            boolean isSaved = pstm.executeUpdate() > 0;
+            return  isSaved;
+        }catch (Exception e){
 
-        return isSaved;
+        }
+        return false;
     }
 
-    public static List<LettuceDto> getAllLettuceDetails() throws SQLException {
+    public List<LettuceDto> getAllLettuceDetails() throws SQLException {
         Connection connection =DbConnection.getInstance().getConnection();
 
         String sql ="SELECT * FROM lettuce";
         PreparedStatement pstm = connection.prepareStatement(sql);
         ResultSet resultSet = pstm.executeQuery();
 
-        ArrayList<LettuceDto> dtoList = new ArrayList<>();
+        List<LettuceDto> dtoList = new ArrayList<>();
 
         while(resultSet.next()){
             dtoList.add(new LettuceDto(
@@ -56,7 +57,7 @@ public class LettuceModel {
         return dtoList;
     }
 
-    public static boolean deleteLettuce(String id) throws SQLException {
+    public boolean deleteLettuce(String id) throws SQLException {
 
         Connection connection= DbConnection.getInstance().getConnection();
 
@@ -71,7 +72,7 @@ public class LettuceModel {
 
     }
 
-    public static boolean updateLettuce(LettuceDto dto) throws SQLException {
+    public boolean updateLettuce(LettuceDto dto) throws SQLException {
 
         Connection connection = DbConnection.getInstance().getConnection();
 
@@ -88,5 +89,20 @@ public class LettuceModel {
         pstm.setString(7,dto.getId());
 
         return pstm.executeUpdate() > 0 ;
+    }
+
+    public int getCount() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT COUNT(*) AS num_lettuce From lettuce";
+
+        Statement pstm = connection.createStatement();
+
+        ResultSet resultSet = pstm.executeQuery(sql);
+
+        resultSet.next();
+        int lettCount = resultSet.getInt("num_lettuce");
+
+        return lettCount;
     }
 }
