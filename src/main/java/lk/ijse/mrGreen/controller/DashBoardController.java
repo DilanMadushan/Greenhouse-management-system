@@ -101,8 +101,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void employeeOnAction(ActionEvent event) {
+    void employeeOnAction(ActionEvent event) throws IOException {
+        Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Employee_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
 
+        Scene scene=new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     @FXML

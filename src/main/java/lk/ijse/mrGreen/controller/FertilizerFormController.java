@@ -238,8 +238,8 @@ public class FertilizerFormController {
             boolean isUpdated = ferModel.updateFertilizer(dto);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION,"Updated Successfully").show();
-                clerFelads();
                 initialize();
+                clerFelads();
             }else{
                 new Alert(Alert.AlertType.WARNING,"Update Failed").show();
             }

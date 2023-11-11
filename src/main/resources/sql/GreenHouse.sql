@@ -90,11 +90,6 @@ create table order_details(
     on update cascade on delete cascade
 );
 
-create table salary(
-    sal_id varchar(50)primary key,
-    days int not null ,
-    full_amount double not null
-);
 
 create table employee(
     emp_id varchar(50)primary key ,
@@ -102,9 +97,7 @@ create table employee(
     age int not null ,
     address varchar(100)not null ,
     job_role varchar(50)not null ,
-    sal_id varchar(50)not null ,
-    constraint foreign key (sal_id)references salary(sal_id)
-    on update cascade on delete cascade
+    salary double not null
 );
 
 create table greenhouse(
@@ -135,11 +128,9 @@ insert into supplier values ("S002","Nimal","jdbc","0764567890","U001");
 
 INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
 
-select * from fertilizer;
 
-DELETE FROM fertilizer WHERE id = "F001";
 
-UPDATE fertilizer SET name = ?, company = ?, unit = ?, qty = ?, sup_id = ?, l_id = ? WHERE f_id = ?
+
 
 
 
