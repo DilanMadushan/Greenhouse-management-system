@@ -12,7 +12,7 @@ public class SupplierDto {
    private String sup_id;
    private String name;
    private String company;
-   private String tel;
+   private int tel;
    private String User_id;
 
 

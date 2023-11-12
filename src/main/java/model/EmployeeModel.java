@@ -4,10 +4,7 @@ import com.sun.source.tree.WhileLoopTree;
 import lk.ijse.mrGreen.db.DbConnection;
 import lk.ijse.mrGreen.dto.EmployeeDto;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -96,5 +93,21 @@ public class EmployeeModel {
             ));
         }
         return dto;
+    }
+
+    public int getEmployeCount() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT COUNT(*) AS num_Employee FROM employee";
+
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        resultSet.next();
+
+        int count = resultSet.getInt("num_Employee");
+
+        return count;
     }
 }

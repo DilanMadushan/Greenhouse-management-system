@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import model.EmployeeModel;
 import model.LettuceModel;
 
 import java.io.IOException;
@@ -34,11 +35,14 @@ public class DashBoardController {
 
     @FXML
     private Text txtLettuceCount;
+    @FXML
+    private Text txtEmployee;
     private int year;
     private int month;
     private int datee;
 
     LettuceModel lettModel =new LettuceModel();
+    EmployeeModel empModel = new EmployeeModel();
 
     @FXML
     private AnchorPane root1;
@@ -46,6 +50,17 @@ public class DashBoardController {
     public void initialize(){
         setDateandTime();
         setLettuceCount();
+        setEmployeeCount();
+    }
+
+    private void setEmployeeCount() {
+        try {
+            String count = Integer.toString(empModel.getEmployeCount());
+            txtEmployee.setText(count);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void setLettuceCount() {
@@ -96,8 +111,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void customerOnAction(ActionEvent event) {
+    void customerOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Customer_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
 
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     @FXML
@@ -137,8 +157,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void supplairOnAction(ActionEvent event) {
+    void supplairOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Supplier_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
 
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
     @FXML
     public void backOnAction(MouseEvent mouseEvent) throws IOException {

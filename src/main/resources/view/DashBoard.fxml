@@ -244,7 +244,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Text fontSmoothingType="LCD" layoutX="129.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                  <Text fx:id="txtEmployee" fontSmoothingType="LCD" layoutX="129.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10" textAlignment="CENTER" wrappingWidth="139.7607421875">
                      <font>
                         <Font size="68.0" />
                      </font>

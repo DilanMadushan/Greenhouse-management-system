@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserModel {
 
@@ -31,5 +33,25 @@ public class UserModel {
         }
 
         return dto;
+    }
+
+    public List<UserDto> loadAllUseres() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT * FROM user";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ArrayList<UserDto> dtoList= new ArrayList<>();
+
+        ResultSet resultSet=pstm.executeQuery();
+
+        while (resultSet.next()){
+            dtoList.add(new UserDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4)
+            ));
+        }
+        return dtoList;
     }
 }

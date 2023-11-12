@@ -128,7 +128,7 @@ insert into supplier values ("S002","Nimal","jdbc","0764567890","U001");
 
 INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
 
-
+alter table supplier modify column tel int not null;
 
 
 
