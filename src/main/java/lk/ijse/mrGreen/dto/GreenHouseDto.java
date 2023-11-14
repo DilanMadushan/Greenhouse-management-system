@@ -5,13 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
-@NoArgsConstructor
+@Setter
 @AllArgsConstructor
-public class CustomerDto {
-    private String id;
+@NoArgsConstructor
+public class GreenHouseDto {
+    private String id ;
     private String name;
-    private String address;
-    private int tel;
+    private String l_id;
+    private int temp ;
+    private double ph;
 }

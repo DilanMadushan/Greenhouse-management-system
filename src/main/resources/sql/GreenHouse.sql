@@ -10,12 +10,6 @@ create table user(
     job_role varchar(50)not null
 );
 
-create table water_tank(
-    wt_id varchar(30)primary key,
-    temp int not null ,
-    ph double not null
-);
-
 insert into user values ("U001","Dilan","Dilan123","Manager");
 
 create table supplier(
@@ -66,7 +60,7 @@ create table customer(
     cus_id varchar(50)primary key ,
     name varchar(150)not null ,
     address varchar(100)not null ,
-    tel varchar(30)not null
+    tel int not null
 );
 
 create table orders(
@@ -103,12 +97,10 @@ create table employee(
 create table greenhouse(
     g_id varchar(50)primary key ,
     name varchar(100)not null ,
-    size double not null,
-    l_id varchar(50)not null ,
-    wt_id varchar(30)not null ,
+    l_id varchar(50)default 'empty',
+    water_temp int not null ,
+    water_ph double not null,
     constraint foreign key (l_id)references lettuce(l_id)
-    on update cascade on delete cascade,
-    constraint foreign key (wt_id)references water_tank(wt_id)
     on update cascade on delete cascade
 );
 
@@ -128,7 +120,15 @@ insert into supplier values ("S002","Nimal","jdbc","0764567890","U001");
 
 INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
 
-alter table supplier modify column tel int not null;
+--
+-- ALTER TABLE Persons
+--     ALTER COLUMN City SET DEFAULT 'Sandnes';
+--
+-- alter table greenhouse drop column size;
+
+-- insert into water_tank values (001,90,9.0);
+--
+INSERT INTO greenhouse (g_id,name,water_temp,water_ph) VALUES ("G001","Deep",10,10.0)
 
 
 

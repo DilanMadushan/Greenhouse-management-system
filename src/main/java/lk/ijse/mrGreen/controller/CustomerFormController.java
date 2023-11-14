@@ -95,7 +95,7 @@ public class CustomerFormController {
         String id = txtId.getText();
         String name = txtName.getText();
         String address = txtAddress.getText();
-        String tel = txtPhone.getText();
+        int tel =Integer.parseInt(txtPhone.getText());
 
         CustomerDto dto = new CustomerDto(id,name,address,tel);
 
@@ -138,7 +138,7 @@ public class CustomerFormController {
         String id = txtId.getText();
         String name = txtName.getText();
         String address = txtAddress.getText();
-        String tel = txtPhone.getText();
+        int tel =Integer.parseInt(txtPhone.getText());
 
         CustomerDto dto = new CustomerDto(id,name,address,tel);
 

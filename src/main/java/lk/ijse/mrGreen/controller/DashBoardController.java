@@ -13,7 +13,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import model.CustomerModel;
 import model.EmployeeModel;
+import model.GreenHouseModel;
 import model.LettuceModel;
 
 import java.io.IOException;
@@ -35,14 +37,23 @@ public class DashBoardController {
 
     @FXML
     private Text txtLettuceCount;
+
     @FXML
     private Text txtEmployee;
+
+    @FXML
+    private Text txtCustomer;
+
+    @FXML
+    private Text txtGreenhouse;
     private int year;
     private int month;
     private int datee;
 
     LettuceModel lettModel =new LettuceModel();
     EmployeeModel empModel = new EmployeeModel();
+    CustomerModel cusModel = new CustomerModel();
+    GreenHouseModel greenModel = new GreenHouseModel();
 
     @FXML
     private AnchorPane root1;
@@ -51,6 +62,30 @@ public class DashBoardController {
         setDateandTime();
         setLettuceCount();
         setEmployeeCount();
+        setCustomerCount();
+        setGreenhouseCount();
+    }
+
+    private void setGreenhouseCount() {
+
+        try {
+            String Count = Integer.toString(greenModel.getGreenhouseCount());
+            txtGreenhouse.setText(Count);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private void setCustomerCount() {
+        try {
+            String count = Integer.toString(cusModel.getCustomerCount());
+            txtCustomer.setText(count);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void setEmployeeCount() {
@@ -142,8 +177,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void greenhouseOnAction(ActionEvent event) {
+    void greenhouseOnAction(ActionEvent event) throws IOException {
+        Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Greenhouse_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
 
+        Scene scene=new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     @FXML

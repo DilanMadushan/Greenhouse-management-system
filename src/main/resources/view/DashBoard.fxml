@@ -222,7 +222,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Text layoutX="128.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                  <Text fx:id="txtGreenhouse" layoutX="128.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6" textAlignment="CENTER" wrappingWidth="139.7607421875">
                      <font>
                         <Font size="68.0" />
                      </font>
@@ -288,14 +288,14 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Text layoutX="122.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                  <Text fx:id="txtCustomer" layoutX="122.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="18" textAlignment="CENTER" wrappingWidth="139.7607421875">
                      <font>
                         <Font size="68.0" />
                      </font>
                   </Text>
                   <ImageView fitHeight="97.0" fitWidth="97.0" layoutX="17.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/icons8-customers-100%2520(1).png" />
+                        <Image url="@../assets/icons8-customer-100.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />

@@ -1,7 +1,7 @@
 package model;
 
 import lk.ijse.mrGreen.db.DbConnection;
-import lk.ijse.mrGreen.dto.CustomerDto;
+import lk.ijse.mrGreen.dto.GreenHouseDto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,18 +10,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerModel {
-    public boolean saveCustomer(CustomerDto dto) throws SQLException {
+public class GreenHouseModel {
+
+    public boolean saveGreenhouse(GreenHouseDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "INSERT INTO customer VALUES(?,?,?,?)";
+        String sql = "INSERT INTO greenhouse VALUES(?,?,?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1,dto.getId());
+        pstm.setString(1, dto.getId());
         pstm.setString(2,dto.getName());
-        pstm.setString(3,dto.getAddress());
-        pstm.setInt(4,dto.getTel());
+        pstm.setString(3,dto.getL_id());
+        pstm.setInt(4,dto.getTemp());
+        pstm.setDouble(5,dto.getPh());
 
-        try{
+        try {
             return pstm.executeUpdate() > 0;
         }catch (Exception e){
 
@@ -29,14 +31,14 @@ public class CustomerModel {
         return false;
     }
 
-    public boolean deleteCustomer(String id) throws SQLException {
+    public boolean deleteGreenhouse(String id) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "DELETE FROM customer WHERE cus_id = ?";
+        String sql ="DELETE FROM greenhouse WHERE g_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1,id);
 
-        try{
+        try {
             return pstm.executeUpdate() > 0;
         }catch (Exception e){
 
@@ -44,17 +46,18 @@ public class CustomerModel {
         return false;
     }
 
-    public boolean updateCustomer(CustomerDto dto) throws SQLException {
+    public boolean updateGreenhouse(GreenHouseDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "UPDATE customer SET name = ?, address = ?, tel = ? WHERE cus_id = ?";
+        String sql = "UPDATE greenhouse SET name = ?, l_id = ?,water_temp = ?, water_ph = ? WHERE g_id = ? ";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1,dto.getName());
-        pstm.setString(2,dto.getAddress());
-        pstm.setInt(3, dto.getTel());
-        pstm.setString(4,dto.getId());
+        pstm.setString(2,dto.getL_id());
+        pstm.setInt(3,dto.getTemp());
+        pstm.setDouble(4,dto.getPh());
+        pstm.setString(5,dto.getId());
 
-        try{
+        try {
             return pstm.executeUpdate() > 0;
         }catch (Exception e){
 
@@ -62,37 +65,36 @@ public class CustomerModel {
         return false;
     }
 
-    public List<CustomerDto> loadAllCustomer() throws SQLException {
+    public List<GreenHouseDto> getAllGreenhouse() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "SELECT * FROM customer";
-        PreparedStatement pstm=connection.prepareStatement(sql);
-
-        ArrayList<CustomerDto> dto = new ArrayList<>();
+        String sql = "SELECT * FROM greenhouse";
+        PreparedStatement pstm = connection.prepareStatement(sql);
 
         ResultSet resultSet = pstm.executeQuery();
 
+        ArrayList<GreenHouseDto> dto = new ArrayList<>();
+
         while (resultSet.next()){
-            dto.add(new CustomerDto(
+            dto.add(new GreenHouseDto(
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    resultSet.getInt(4)
+                    resultSet.getInt(4),
+                    resultSet.getDouble(5)
             ));
         }
         return dto;
     }
 
-    public int getCustomerCount() throws SQLException {
+    public int getGreenhouseCount() throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-
-        String sql = "SELECT COUNT(*) AS num_Customer FROM customer";
-        PreparedStatement pstm =connection.prepareStatement(sql);
+        String sql= "SELECT COUNT(*) AS num_green FROM greenhouse";
+        PreparedStatement pstm = connection.prepareStatement(sql);
 
         ResultSet resultSet = pstm.executeQuery();
 
         resultSet.next();
-
-        int count = resultSet.getInt("num_Customer");
+        int count = resultSet.getInt("num_green");
 
         return count;
     }
