@@ -202,4 +202,16 @@ public class EmployeeFormController {
 
     }
 
+    public void mouseOnAction(MouseEvent mouseEvent) {
+        Integer index = tblEmployee.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+        txtId.setText(colId.getCellData(index).toString());
+        txtName.setText(colName.getCellData(index).toString());
+        txtAge.setText(colAge.getCellData(index).toString());
+        txtAddress.setText(colAddress.getCellData(index).toString());
+        txtJob.setText(colJob.getCellData(index).toString());
+        txtSalary.setText(colSalary.getCellData(index).toString());
+    }
 }

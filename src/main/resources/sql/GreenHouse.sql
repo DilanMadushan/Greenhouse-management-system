@@ -11,6 +11,7 @@ create table user(
 );
 
 insert into user values ("U001","Dilan","Dilan123","Manager");
+insert into user values ("U002","Kasun","Kasun007","Accountant");
 
 create table supplier(
     sup_id varchar(30) primary key ,
@@ -105,9 +106,11 @@ create table greenhouse(
 );
 
 create table greenhouse_employee_details(
+    work_id varchar(30)PRIMARY KEY,
     emp_id varchar(50)not null ,
     g_id varchar(50)not null ,
     date DATE not null ,
+    description varchar(300)not null,
     constraint foreign key (emp_id)references employee(emp_id)
     on update cascade on delete cascade ,
     constraint foreign key (g_id)references greenhouse(g_id)
@@ -128,7 +131,9 @@ INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
 
 -- insert into water_tank values (001,90,9.0);
 --
-INSERT INTO greenhouse (g_id,name,water_temp,water_ph) VALUES ("G001","Deep",10,10.0)
+INSERT INTO greenhouse (g_id,name,water_temp,water_ph) VALUES ("G001","Deep",10,10.0);
+
+alter table greenhouse_employee_details  add description varchar(300)not null;
 
 
 

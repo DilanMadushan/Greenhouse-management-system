@@ -54,4 +54,24 @@ public class UserModel {
         }
         return dtoList;
     }
+
+    public String getPassword(String name) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT password FROM user WHERE name = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        pstm.setString(1,name);
+
+        try{
+            ResultSet resultSet = pstm.executeQuery();
+
+            resultSet.next();
+            return resultSet.getString("password");
+
+        }catch (Exception e){
+
+        }
+
+       return null;
+    }
 }

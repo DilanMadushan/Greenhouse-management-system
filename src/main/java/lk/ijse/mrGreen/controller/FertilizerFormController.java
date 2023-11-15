@@ -259,4 +259,17 @@ public class FertilizerFormController {
         stage.centerOnScreen();
     }
 
+    public void mouseClickOnAction(MouseEvent mouseEvent) {
+        Integer index = tblFertilizer.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+        txtId.setText(colId.getCellData(index).toString());
+        txtName.setText(colName.getCellData(index).toString());
+        txtCompany.setText(colCompany.getCellData(index).toString());
+        txtUnit.setText(colUnit.getCellData(index).toString());
+        txtQty.setText(colQty.getCellData(index).toString());
+        cmbSupId.setValue(colSupID.getCellData(index).toString());
+        cmbLettId.setValue(colLettId.getCellData(index).toString());
+    }
 }

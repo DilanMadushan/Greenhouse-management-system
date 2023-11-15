@@ -1,13 +1,16 @@
 package lk.ijse.mrGreen.controller;
 
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lk.ijse.mrGreen.dto.UserDto;
 import model.UserModel;
 
@@ -17,14 +20,24 @@ import java.sql.SQLException;
 public class LoginController {
     @FXML
     private JFXTextField txtNmae;
-
     @FXML
-    private JFXTextField txtPassword;
+    private JFXPasswordField txtPassword;
     @FXML
     private AnchorPane root;
 
     private UserModel userModel = new UserModel();
 
+    @FXML
+    void FogetOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/forget_Form.fxml"));
+        Scene scene = new Scene(rootNode);
+
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.centerOnScreen();
+        stage.show();
+    }
     @FXML
     void loginOnAction(ActionEvent event) throws IOException {
 
@@ -42,12 +55,12 @@ public class LoginController {
                     stage.setScene(scene);
                     stage.centerOnScreen();
                 }else {
-                    new Alert(Alert.AlertType.INFORMATION, "Incorrect username or password").show();
+                    new Alert(Alert.AlertType.WARNING, "Incorrect username or password").show();
                 }
 
             }
             else{
-                new Alert(Alert.AlertType.INFORMATION, "Incorrect username or password").show();
+                new Alert(Alert.AlertType.WARNING, "Incorrect username or password").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

@@ -173,4 +173,14 @@ public class CustomerFormController {
     }
 
 
+    public void mouseClickOnAction(MouseEvent mouseEvent) {
+        Integer index = tblCustomer.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+        txtId.setText(colId.getCellData(index).toString());
+        txtName.setText(colName.getCellData(index).toString());
+        txtAddress.setText(colAddress.getCellData(index).toString());
+        txtPhone.setText(colPhone.getCellData(index).toString());
+    }
 }

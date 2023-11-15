@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -27,17 +29,17 @@
                   <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtNmae" labelFloat="true" layoutX="79.0" layoutY="243.0" prefHeight="34.0" prefWidth="294.0" promptText="Username">
+            <JFXTextField fx:id="txtNmae" labelFloat="true" layoutX="79.0" layoutY="243.0" prefHeight="34.0" prefWidth="294.0" promptText="Username" AnchorPane.rightAnchor="95.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtPassword" labelFloat="true" layoutX="79.0" layoutY="327.0" prefHeight="34.0" prefWidth="294.0" promptText="Password">
+            <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="79.0" layoutY="328.0" prefHeight="25.0" prefWidth="294.0" promptText="Password" AnchorPane.bottomAnchor="359.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="328.0">
                <font>
                   <Font size="15.0" />
                </font>
-            </JFXTextField>
-            <JFXButton layoutX="172.0" layoutY="453.0" onAction="#loginOnAction" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #09ADA8;" text="Login" textFill="WHITE">
+            </JFXPasswordField>
+            <JFXButton layoutX="172.0" layoutY="450.0" onAction="#loginOnAction" prefHeight="34.0" prefWidth="93.0" style="-fx-background-color: #09ADA8;" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -45,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <Label layoutX="59.0" layoutY="556.0" prefHeight="34.0" prefWidth="334.0" text="&quot;If there is a future, it will be Green&quot;" textFill="#00c9b7">
+            <Label layoutX="67.0" layoutY="591.0" prefHeight="34.0" prefWidth="334.0" text="&quot;If there is a future, it will be Green&quot;" textFill="#00c9b7">
                <font>
                   <Font size="21.0" />
                </font>
@@ -55,6 +57,11 @@
                   <Image url="@../assets/icons8-close-50 (1).png" />
                </image>
             </ImageView>
+            <Hyperlink layoutX="160.0" layoutY="516.0" onAction="#FogetOnAction" text="Forgot password" textFill="#09ada8">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Hyperlink>
          </children></AnchorPane>
    </children>
 </AnchorPane>

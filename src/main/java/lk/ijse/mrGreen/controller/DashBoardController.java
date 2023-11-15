@@ -185,6 +185,17 @@ public class DashBoardController {
         stage.setScene(scene);
         stage.centerOnScreen();
     }
+    @FXML
+    void ControlOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Work_form.fxml"));
+        Stage stage= (Stage) root1.getScene().getWindow();
+
+        Scene scene= new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+
+    }
+
 
     @FXML
     void notifyOnAction(ActionEvent event) {
@@ -213,6 +224,12 @@ public class DashBoardController {
         Scene scene=new Scene(rootNode);
         stage.setScene(scene);
         stage.centerOnScreen();
+
+    }
+    @FXML
+    void closeOnAction(MouseEvent event) {
+        Stage stage = (Stage) txtGreenhouse.getScene().getWindow();
+        stage.close();
 
     }
 }

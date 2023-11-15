@@ -237,4 +237,18 @@ public class LettuceFormController {
         stage.centerOnScreen();
 
     }
+
+    public void mouseClickOnAction(MouseEvent mouseEvent) {
+        Integer index = tblLettuce.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+        txtId.setText(colId.getCellData(index).toString());
+        txtName.setText(colName.getCellData(index).toString());
+        txtQty.setText(colQty.getCellData(index).toString());
+        txtTemp.setText(colTemp.getCellData(index).toString());
+        txtHumid.setText(colHumid.getCellData(index).toString());
+        txtunit.setText(colUnit.getCellData(index).toString());
+        cmbSupId.setValue(colSupId.getCellData(index).toString());
+    }
 }

@@ -110,4 +110,21 @@ public class EmployeeModel {
 
         return count;
     }
+
+    public String getEmployeeName(String id) throws SQLException {
+
+            Connection connection = DbConnection.getInstance().getConnection();
+            String sql ="SELECT name FROM employee WHERE emp_id = ?";
+            PreparedStatement pstm = connection.prepareStatement(sql);
+
+            pstm.setString(1,id);
+
+            ResultSet resultSet = pstm.executeQuery();
+
+            resultSet.next();
+
+            String name = resultSet.getString("name");
+
+            return name;
+    }
 }

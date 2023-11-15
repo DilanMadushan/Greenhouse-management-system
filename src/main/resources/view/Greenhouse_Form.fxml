@@ -58,7 +58,7 @@
                 <Image url="@../assets/icons8-back-64.png" />
             </image>
         </ImageView>
-        <TableView fx:id="tblGreen" layoutX="685.0" layoutY="185.0" prefHeight="405.0" prefWidth="569.0">
+        <TableView fx:id="tblGreen" layoutX="685.0" layoutY="185.0" onMouseClicked="#onMouseClick" prefHeight="405.0" prefWidth="569.0">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="101.0" text="Id" />
                 <TableColumn fx:id="colName" prefWidth="138.0" text="Name" />

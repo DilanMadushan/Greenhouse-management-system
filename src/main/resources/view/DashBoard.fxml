@@ -19,7 +19,7 @@
       </Label>
       <Pane layoutX="-43.0" layoutY="16.0" prefHeight="689.0" prefWidth="180.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 50;">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="24.0" onAction="#LettuceOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="29.0" onAction="#LettuceOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
                <font>
                   <Font size="1.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="100.0" onAction="#greenhouseOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="105.0" onAction="#greenhouseOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
                <font>
                   <Font size="1.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="178.0" onAction="#fertilizerOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="183.0" onAction="#fertilizerOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
                <font>
                   <Font size="1.0" />
                </font>
@@ -91,7 +91,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="257.0" onAction="#employeeOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;" text="Button">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="262.0" onAction="#employeeOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;" text="Button">
                <font>
                   <Font size="1.0" />
                </font>
@@ -115,7 +115,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="75.0" layoutY="337.0" onAction="#supplairOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="429.0" onAction="#supplairOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
                <font>
                   <Font size="1.0" />
                </font>
@@ -139,7 +139,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="415.0" onAction="#customerOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="507.0" onAction="#customerOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
                <font>
                   <Font size="1.0" />
                </font>
@@ -163,7 +163,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="495.0" onAction="#orderOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="587.0" onAction="#orderOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
                <font>
                   <Font size="1.0" />
                </font>
@@ -187,21 +187,21 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="577.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
+            <JFXButton buttonType="RAISED" layoutX="74.0" layoutY="346.0" onAction="#ControlOnAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #00C9B7;">
                <font>
                   <Font size="1.0" />
                </font>
                <graphic>
                   <Pane prefHeight="70.0" prefWidth="70.0">
                      <children>
-                        <Label layoutX="9.0" layoutY="46.0" prefHeight="20.0" prefWidth="62.0" text="Payment" textFill="WHITE">
+                        <Label layoutX="18.0" layoutY="50.0" prefHeight="20.0" prefWidth="38.0" text="Work" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="46.0" fitWidth="45.0" layoutX="13.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/icons8-payment-100.png" />
+                              <Image url="@../assets/icons8-work-64.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -213,7 +213,7 @@
             </JFXButton>
          </children>
       </Pane>
-      <AnchorPane layoutX="155.0" layoutY="88.0" prefHeight="584.0" prefWidth="1099.0" style="-fx-background-radius: 30; -fx-background-color: white;" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
+      <AnchorPane layoutX="156.0" layoutY="108.0" prefHeight="584.0" prefWidth="1099.0" style="-fx-background-radius: 30; -fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="24.799999999999955">
          <children>
             <Pane layoutX="46.0" layoutY="43.0" prefHeight="153.0" prefWidth="281.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.bottomAnchor="356.0" AnchorPane.topAnchor="75.0">
                <children>
@@ -354,7 +354,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Pane layoutX="1060.0" layoutY="15.0" prefHeight="70.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.rightAnchor="40.0">
+      <Pane layoutX="1025.0" layoutY="15.0" prefHeight="70.0" prefWidth="180.0" style="-fx-background-color: white; -fx-background-radius: 20;" AnchorPane.rightAnchor="75.0">
          <children>
             <Text fx:id="txtTime" layoutX="21.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00:00:00">
                <font>
@@ -368,7 +368,7 @@
             </Text>
          </children>
       </Pane>
-      <Text fill="#00c9b7" layoutX="775.0" layoutY="68.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" textAlignment="RIGHT" wrappingWidth="263.0">
+      <Text fill="#00c9b7" layoutX="741.0" layoutY="69.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard" textAlignment="RIGHT" wrappingWidth="263.0">
          <font>
             <Font name="System Bold" size="49.0" />
          </font>
@@ -411,5 +411,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <ImageView fitHeight="38.0" fitWidth="41.0" layoutX="1234.0" layoutY="7.0" onMouseClicked="#closeOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-close-50 (1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

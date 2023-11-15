@@ -207,4 +207,15 @@ public class SupplierFormController {
         cmbUserId.setValue("");
     }
 
+    public void mouseClickOnAction(MouseEvent mouseEvent) {
+        Integer index = tblSupplier.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+        txtId.setText(colId.getCellData(index).toString());
+        txtName.setText(colName.getCellData(index).toString());
+        txtCompany.setText(colCompany.getCellData(index).toString());
+        txtPhone.setText(colPhone.getCellData(index).toString());
+        cmbUserId.setValue(colUser.getCellData(index).toString());
+    }
 }

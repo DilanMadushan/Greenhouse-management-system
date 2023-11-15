@@ -206,4 +206,16 @@ public class GreenhouseFormController {
     }
 
 
+    public void onMouseClick(MouseEvent mouseEvent) {
+        Integer index = tblGreen.getSelectionModel().getSelectedIndex();
+        if (index <= -1) {
+            return;
+        }
+
+        txtId.setText(colId.getCellData(index).toString());
+        txtName.setText(colName.getCellData(index).toString());
+        cmbLettuce.setValue(colLettuce.getCellData(index).toString());
+        txtTemp.setText(colTemp.getCellData(index).toString());
+        txtPh.setText(colPh.getCellData(index).toString());
+    }
 }
