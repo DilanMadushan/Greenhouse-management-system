@@ -31,6 +31,8 @@ public class LettuceFormController {
 
     @FXML
     public AnchorPane Anchor;
+    public TableColumn <?, ?>colSeed;
+    public JFXTextField txtSeedQty;
     @FXML
     private TableView<LettuceTm> tblLettuce;
 
@@ -92,8 +94,9 @@ public class LettuceFormController {
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colTemp.setCellValueFactory(new PropertyValueFactory<>("temp"));
         colHumid.setCellValueFactory(new PropertyValueFactory<>("humid"));
-        colUnit.setCellValueFactory(new PropertyValueFactory<>("Unit"));
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colSeed.setCellValueFactory(new PropertyValueFactory<>("seed"));
+        colUnit.setCellValueFactory(new PropertyValueFactory<>("Unit"));
         colSupId.setCellValueFactory(new PropertyValueFactory<>("suppId"));
 
     }
@@ -110,8 +113,9 @@ public class LettuceFormController {
                         list.getName(),
                         list.getTemp(),
                         list.getHumid(),
-                        list.getUnit(),
                         list.getQty(),
+                        list.getSeed(),
+                        list.getUnit(),
                         list.getSuppId()
                 ));
             }
@@ -148,11 +152,12 @@ public class LettuceFormController {
         int temp = Integer.parseInt(txtTemp.getText());
         int humid = Integer.parseInt(txtHumid.getText());
         double qty = Double.parseDouble(txtQty.getText());
+        double seed = Double.parseDouble(txtSeedQty.getText());
         double unit = Double.parseDouble(txtunit.getText());
         String suppId= (String) cmbSupId.getValue();
 
 
-        var dto = new LettuceDto(id,name,temp,humid,qty,unit,suppId);
+        var dto = new LettuceDto(id,name,temp,humid,qty,seed,unit,suppId);
 
         try {
             boolean isSaved=lettModel.saveLettuce(dto);
@@ -196,10 +201,12 @@ public class LettuceFormController {
         int temp = Integer.parseInt(txtTemp.getText());
         int humid = Integer.parseInt(txtHumid.getText());
         double qty = Double.parseDouble(txtQty.getText());
+        double seed = Double.parseDouble(txtSeedQty.getText());
         double unit = Double.parseDouble(txtunit.getText());
         String suppId= (String) cmbSupId.getValue();
 
-        var dto = new LettuceDto(id,name,temp,humid,qty,unit,suppId);
+
+        var dto = new LettuceDto(id,name,temp,humid,qty,seed,unit,suppId);
 
         try {
             boolean isUpdated =lettModel.updateLettuce(dto);
@@ -222,6 +229,7 @@ public class LettuceFormController {
         txtTemp.setText("");
         txtHumid.setText("");
         txtQty.setText("");
+        txtSeedQty.setText("");
         txtunit.setText("");
         cmbSupId.setValue("");
     }
@@ -246,6 +254,7 @@ public class LettuceFormController {
         txtId.setText(colId.getCellData(index).toString());
         txtName.setText(colName.getCellData(index).toString());
         txtQty.setText(colQty.getCellData(index).toString());
+        txtSeedQty.setText(colSeed.getCellData(index).toString());
         txtTemp.setText(colTemp.getCellData(index).toString());
         txtHumid.setText(colHumid.getCellData(index).toString());
         txtunit.setText(colUnit.getCellData(index).toString());

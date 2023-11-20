@@ -124,7 +124,7 @@ public class GreenhouseFormController {
         int temp = Integer.parseInt(txtTemp.getText());
         double ph = Double.parseDouble(txtPh.getText());
 
-        var dto = new GreenHouseDto(id,name,letId,temp,ph);
+        var dto = new GreenHouseDto(id,name,letId,0,temp,ph);
 
         try {
             boolean isSaved = greenModel.saveGreenhouse(dto);
@@ -169,7 +169,7 @@ public class GreenhouseFormController {
         int temp = Integer.parseInt(txtTemp.getText());
         double ph = Double.parseDouble(txtPh.getText());
 
-        var dto = new GreenHouseDto(id,name,letId,temp,ph);
+        var dto = new GreenHouseDto(id,name,letId,0,temp,ph);
 
         try {
             boolean isUpdated = greenModel.updateGreenhouse(dto);

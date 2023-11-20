@@ -8,6 +8,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -25,6 +28,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
+import java.util.Optional;
 
 
 public class DashBoardController {
@@ -187,7 +191,7 @@ public class DashBoardController {
     }
     @FXML
     void ControlOnAction(ActionEvent event) throws IOException {
-        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Work_form.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/control_Panel.fxml"));
         Stage stage= (Stage) root1.getScene().getWindow();
 
         Scene scene= new Scene(rootNode);
@@ -203,7 +207,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void orderOnAction(ActionEvent event) {
+    void orderOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Order_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
+
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
 
     }
 
@@ -218,13 +228,20 @@ public class DashBoardController {
     }
     @FXML
     public void backOnAction(MouseEvent mouseEvent) throws IOException {
-        Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
-        Stage stage = (Stage) root1.getScene().getWindow();
+        ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
+        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-        Scene scene=new Scene(rootNode);
-        stage.setScene(scene);
-        stage.centerOnScreen();
+        Optional<ButtonType> result = new Alert(Alert.AlertType.INFORMATION, "Are you sure to Logout?", yes, no).showAndWait();
 
+        if (result.orElse(no) == yes) {
+            Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
+            Stage stage = (Stage) root1.getScene().getWindow();
+
+            Scene scene=new Scene(rootNode);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+
+        }
     }
     @FXML
     void closeOnAction(MouseEvent event) {

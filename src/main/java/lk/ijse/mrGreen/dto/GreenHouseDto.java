@@ -13,6 +13,7 @@ public class GreenHouseDto {
     private String id ;
     private String name;
     private String l_id;
+    private int seed;
     private int temp ;
     private double ph;
 }

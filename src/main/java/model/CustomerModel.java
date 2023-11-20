@@ -96,4 +96,19 @@ public class CustomerModel {
 
         return count;
     }
+
+    public String getName(String id) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT name FROM customer WHERE cus_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        pstm.setString(1,id);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        if(resultSet.next()){
+            return resultSet.getString("name");
+        }
+        return null;
+    }
 }

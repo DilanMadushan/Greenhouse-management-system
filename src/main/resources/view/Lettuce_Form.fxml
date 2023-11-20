@@ -12,39 +12,39 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.LettuceFormController">
+<AnchorPane fx:id="Anchor" prefHeight="728.0" prefWidth="1315.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.LettuceFormController">
    <children>
-      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="91.0" layoutY="225.0" prefHeight="37.0" prefWidth="239.0" promptText="Lettuce id" AnchorPane.bottomAnchor="458.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="225.0">
+      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="56.0" layoutY="209.0" prefHeight="37.0" prefWidth="239.0" promptText="Lettuce id" AnchorPane.bottomAnchor="474.0" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="209.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtTemp" labelFloat="true" layoutX="380.0" layoutY="321.0" prefHeight="37.0" prefWidth="239.0" promptText="Temperature" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="321.0">
+      <JFXTextField fx:id="txtTemp" labelFloat="true" layoutX="56.0" layoutY="403.0" prefHeight="37.0" prefWidth="239.0" promptText="Temperature" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="403.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="380.0" layoutY="225.0" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="225.0">
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="345.0" layoutY="209.0" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="209.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="91.0" layoutY="321.0" prefHeight="37.0" prefWidth="239.0" promptText="QTY on hand" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="321.0">
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="56.0" layoutY="305.0" prefHeight="37.0" prefWidth="239.0" promptText="QTY on hand" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="305.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="81.0" layoutY="76.0" opacity="0.5" text="Lettuce  Manage" textFill="#00c9b7">
+      <Label layoutX="57.0" layoutY="47.0" opacity="0.5" text="Lettuce  Manage" textFill="#00c9b7">
          <font>
-            <Font name="System Bold" size="70.0" />
+            <Font name="System Bold" size="73.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtHumid" labelFloat="true" layoutX="91.0" layoutY="416.0" prefHeight="37.0" prefWidth="239.0" promptText="Humidity">
+      <JFXTextField fx:id="txtHumid" labelFloat="true" layoutX="345.0" layoutY="403.0" prefHeight="37.0" prefWidth="239.0" promptText="Humidity" AnchorPane.leftAnchor="345.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXButton layoutX="65.0" layoutY="585.0" onAction="#addOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="Add " textFill="WHITE">
+      <JFXButton layoutX="40.0" layoutY="593.0" onAction="#addOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="Add " textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -52,7 +52,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="253.0" layoutY="585.0" onAction="#updateOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="Update" textFill="WHITE">
+      <JFXButton layoutX="228.0" layoutY="593.0" onAction="#updateOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="Update" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -60,7 +60,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="444.0" layoutY="585.0" onAction="#removeOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #eb4d4b; -fx-background-radius: 20;" text="Remove" textFill="WHITE">
+      <JFXButton layoutX="419.0" layoutY="593.0" onAction="#removeOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #eb4d4b; -fx-background-radius: 20;" text="Remove" textFill="WHITE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -73,22 +73,28 @@
             <Image url="@../assets/icons8-back-64.png" />
          </image>
       </ImageView>
-      <JFXComboBox fx:id="cmbSupId" editable="true" labelFloat="true" layoutX="91.0" layoutY="510.0" prefHeight="25.0" prefWidth="239.0" promptText="Supplier id" unFocusColor="BLACK" />
-      <JFXTextField fx:id="txtunit" labelFloat="true" layoutX="380.0" layoutY="417.0" prefHeight="37.0" prefWidth="239.0" promptText="Unit price">
+      <JFXComboBox fx:id="cmbSupId" editable="true" labelFloat="true" layoutX="56.0" layoutY="494.0" prefHeight="25.0" prefWidth="239.0" promptText="Supplier id" unFocusColor="BLACK" AnchorPane.rightAnchor="731.0" />
+      <JFXTextField fx:id="txtunit" labelFloat="true" layoutX="56.0" layoutY="483.0" prefHeight="37.0" prefWidth="239.0" promptText="Unit price" AnchorPane.rightAnchor="1020.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <TableView fx:id="tblLettuce" layoutX="651.0" layoutY="165.0" onMouseClicked="#mouseClickOnAction" prefHeight="412.0" prefWidth="609.0">
+      <TableView fx:id="tblLettuce" layoutX="618.0" layoutY="155.0" onMouseClicked="#mouseClickOnAction" prefHeight="467.0" prefWidth="678.0">
         <columns>
-          <TableColumn fx:id="colId" prefWidth="72.0" text="Id" />
-          <TableColumn fx:id="colName" prefWidth="95.0" text="Name" />
-            <TableColumn fx:id="colTemp" prefWidth="91.0" text="Temperature" />
-            <TableColumn fx:id="colHumid" prefWidth="73.0" text="Humidity" />
-            <TableColumn fx:id="colQty" prefWidth="95.0" text="Qty on hand" />
-            <TableColumn fx:id="colUnit" prefWidth="88.0" text="Unit Price" />
-            <TableColumn fx:id="colSupId" prefWidth="92.0" text="Sup Id" />
+          <TableColumn fx:id="colId" prefWidth="66.0" text="Id" />
+          <TableColumn fx:id="colName" prefWidth="97.0" text="Name" />
+            <TableColumn fx:id="colTemp" prefWidth="72.0" text="Temp" />
+            <TableColumn fx:id="colHumid" prefWidth="74.0" text="Humidity" />
+            <TableColumn fx:id="colQty" prefWidth="112.0" text="Qty on hand(Kg)" />
+            <TableColumn fx:id="colSeed" prefWidth="90.0" text="Seeds Qty(Kg)" />
+            <TableColumn fx:id="colUnit" prefWidth="90.0" text="Unit Price" />
+            <TableColumn fx:id="colSupId" prefWidth="76.0" text="Sup Id" />
         </columns>
       </TableView>
+      <JFXTextField fx:id="txtSeedQty" labelFloat="true" layoutX="338.0" layoutY="303.0" prefHeight="37.0" prefWidth="239.0" promptText="Seed qty">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
    </children>
 </AnchorPane>

@@ -70,6 +70,7 @@ public class LoginController {
 
     }
 
+
     @FXML
     public void closeOnAction(javafx.scene.input.MouseEvent mouseEvent) {
         System.exit(0);

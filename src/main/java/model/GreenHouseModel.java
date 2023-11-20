@@ -14,7 +14,7 @@ public class GreenHouseModel {
 
     public boolean saveGreenhouse(GreenHouseDto dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        String sql = "INSERT INTO greenhouse VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO greenhouse(g_id,name,l_id,water_temp,water_ph) VALUES(?,?,?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getId());
@@ -80,7 +80,8 @@ public class GreenHouseModel {
                     resultSet.getString(2),
                     resultSet.getString(3),
                     resultSet.getInt(4),
-                    resultSet.getDouble(5)
+                    resultSet.getInt(5),
+                    resultSet.getDouble(6)
             ));
         }
         return dto;

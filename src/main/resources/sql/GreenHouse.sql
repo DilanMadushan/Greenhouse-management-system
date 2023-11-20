@@ -29,6 +29,7 @@ create table lettuce(
   Temp int not null ,
   humidity int not null ,
   qty_on_hand double not null ,
+  seed_qty double not null ,
   unit_price double not null,
   sup_id varchar(30)not null ,
   constraint foreign key (sup_id) references supplier(sup_id)
@@ -66,19 +67,18 @@ create table customer(
 
 create table orders(
     order_id varchar(30)primary key ,
-    date DATE not null ,
     cus_id varchar(50),
-    pay_id  varchar(30),
+    date DATE not null ,
     constraint foreign key (cus_id)references customer(cus_id)
-    on update cascade on delete cascade,
-    constraint foreign key (pay_id) references payment(pay_id)
     on update cascade on delete cascade
+
 );
 
 create table order_details(
     order_id varchar(30)not null ,
     l_id varchar(50)not null ,
     qty int not null ,
+    unit_price double not null ,
     constraint foreign key(order_id)references orders(order_id)
     on update cascade on delete cascade,
     constraint foreign key (l_id)references lettuce(l_id)
@@ -99,6 +99,7 @@ create table greenhouse(
     g_id varchar(50)primary key ,
     name varchar(100)not null ,
     l_id varchar(50)default 'empty',
+    seed_count double default '0.0',
     water_temp int not null ,
     water_ph double not null,
     constraint foreign key (l_id)references lettuce(l_id)
@@ -133,7 +134,7 @@ INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
 --
 INSERT INTO greenhouse (g_id,name,water_temp,water_ph) VALUES ("G001","Deep",10,10.0);
 
-alter table greenhouse_employee_details  add description varchar(300)not null;
+alter table order_details  add total double not null ;
 
 
 

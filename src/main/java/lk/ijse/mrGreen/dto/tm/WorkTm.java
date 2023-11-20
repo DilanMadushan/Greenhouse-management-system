@@ -1,4 +1,4 @@
-package lk.ijse.mrGreen.dto;
+package lk.ijse.mrGreen.dto.tm;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

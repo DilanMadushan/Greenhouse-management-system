@@ -3,6 +3,7 @@ package model;
 import com.sun.source.tree.WhileLoopTree;
 import lk.ijse.mrGreen.db.DbConnection;
 import lk.ijse.mrGreen.dto.LettuceDto;
+import lk.ijse.mrGreen.dto.tm.CartTm;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ public class LettuceModel {
     public boolean saveLettuce(LettuceDto dto) throws SQLException {
         Connection connection= DbConnection.getInstance().getConnection();
 
-        String sql = "INSERT INTO lettuce VALUES(?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO lettuce VALUES(?,?,?,?,?,?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1,dto.getId());
@@ -21,8 +22,9 @@ public class LettuceModel {
         pstm.setInt(3,dto.getTemp());
         pstm.setInt(4,dto.getHumid());
         pstm.setDouble(5,dto.getQty());
-        pstm.setDouble(6,dto.getUnit());
-        pstm.setString(7,dto.getSuppId());
+        pstm.setDouble(6,dto.getSeed());
+        pstm.setDouble(7,dto.getUnit());
+        pstm.setString(8,dto.getSuppId());
 
         try{
             boolean isSaved = pstm.executeUpdate() > 0;
@@ -50,7 +52,8 @@ public class LettuceModel {
                     resultSet.getInt(4),
                     resultSet.getDouble(5),
                     resultSet.getDouble(6),
-                    resultSet.getString(7)
+                    resultSet.getDouble(7),
+                    resultSet.getString(8)
             ));
         }
 
@@ -76,7 +79,7 @@ public class LettuceModel {
 
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE lettuce SET name = ?,Temp = ?,humidity = ?,qty_on_hand = ?, unit_price = ?, sup_id = ? WHERE l_id = ?";
+        String sql = "UPDATE lettuce SET name = ?,Temp = ?,humidity = ?,qty_on_hand = ?, seed_qty = ?, unit_price = ?, sup_id = ? WHERE l_id = ?";
 
         PreparedStatement pstm = connection.prepareStatement(sql);
 
@@ -84,9 +87,10 @@ public class LettuceModel {
         pstm.setInt(2,dto.getTemp());
         pstm.setInt(3,dto.getHumid());
         pstm.setDouble(4,dto.getQty());
-        pstm.setDouble(5,dto.getUnit());
-        pstm.setString(6,dto.getSuppId());
-        pstm.setString(7,dto.getId());
+        pstm.setDouble(5,dto.getSeed());
+        pstm.setDouble(6,dto.getUnit());
+        pstm.setString(7,dto.getSuppId());
+        pstm.setString(8,dto.getId());
 
         return pstm.executeUpdate() > 0 ;
     }
@@ -104,5 +108,48 @@ public class LettuceModel {
         int lettCount = resultSet.getInt("num_lettuce");
 
         return lettCount;
+    }
+
+    public LettuceDto getLettueDetails(String id) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT * FROM lettuce WHERE l_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        LettuceDto dto = null;
+        pstm.setString(1,id);
+        ResultSet resultSet = pstm.executeQuery();
+        if(resultSet.next()){
+            dto = new LettuceDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getInt(4),
+                    resultSet.getDouble(5),
+                    resultSet.getDouble(6),
+                    resultSet.getDouble(7),
+                    resultSet.getString(8)
+            );
+        }
+        return dto;
+    }
+
+    public boolean updateLettuceQty(List<CartTm> cartTmList) throws SQLException {
+        for (CartTm tm: cartTmList) {
+            if(!updateQty(tm.getId(),tm.getQty())){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private boolean updateQty(String id, Double qty) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "UPDATE lettuce SET qty_on_hand = qty_on_hand - ? WHERE l_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        pstm.setDouble(1,qty);
+        pstm.setString(2,id);
+
+        return pstm.executeUpdate()>0;
     }
 }

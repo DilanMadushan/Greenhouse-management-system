@@ -12,8 +12,9 @@ public class LettuceTm {
     private String name;
     private int temp;
     private int humid;
-    private double unit;
     private double qty;
+    private double seed;
+    private double unit;
     private String suppId;
 
 }

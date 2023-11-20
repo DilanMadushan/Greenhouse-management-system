@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.mrGreen.controller.OrderFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.OrderFormController">
+    <children>
+        <Label layoutX="65.0" layoutY="22.0" opacity="0.5" prefHeight="120.0" prefWidth="602.0" text="Order  Manage" textFill="#00c9b7">
+            <font>
+                <Font name="System Bold" size="82.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1188.0" layoutY="23.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/icons8-back-64.png" />
+            </image>
+        </ImageView>
+      <DatePicker fx:id="datePikker" layoutX="65.0" layoutY="474.0" prefHeight="25.0" prefWidth="224.0" AnchorPane.bottomAnchor="214.8" AnchorPane.rightAnchor="721.0" />
+      <TableView fx:id="tblOrder" layoutX="615.0" layoutY="154.0" onMouseClicked="#mouseClickOnAction" prefHeight="424.0" prefWidth="632.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="109.5999755859375" text="Lettuce Id" />
+          <TableColumn fx:id="colName" prefWidth="148.0" text="Name" />
+            <TableColumn fx:id="colQty" prefWidth="123.20001220703125" text="Qty" />
+            <TableColumn fx:id="colUnit" minWidth="8.0" prefWidth="123.20001220703125" text="Unit Price" />
+            <TableColumn fx:id="colTotal" prefWidth="130.4000244140625" text="Total" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnAddTocart" layoutX="74.0" layoutY="557.0" onAction="#addToCartOnAction" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="Add to cart" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="942.0" layoutY="609.0" onAction="#removeOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #eb4d4b; -fx-background-radius: 20;" text="Remove" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="749.0" layoutY="609.0" onAction="#placeOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="Place Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text layoutX="73.0" layoutY="654.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Net Total:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtTotal" fill="#0b24bf" layoutX="174.0" layoutY="657.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.0" wrappingWidth="123.0">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmdCustomerId" labelFloat="true" layoutX="65.0" layoutY="221.0" onAction="#cusIdOnAction" prefHeight="25.0" prefWidth="224.0" promptText="Customer ID" AnchorPane.leftAnchor="65.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <JFXTextField fx:id="txtCusName" labelFloat="true" layoutX="334.0" layoutY="221.0" prefHeight="25.0" prefWidth="224.0" promptText="Name">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXComboBox fx:id="cmbLettId" labelFloat="true" layoutX="65.0" layoutY="313.0" onAction="#lettIdOnAction" prefHeight="25.0" prefWidth="224.0" promptText="Lettuce Id" AnchorPane.bottomAnchor="381.4" AnchorPane.leftAnchor="65.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <JFXTextField fx:id="txtLettName" labelFloat="true" layoutX="334.0" layoutY="303.0" prefHeight="25.0" prefWidth="224.0" promptText="Lettuce Name" AnchorPane.bottomAnchor="381.4">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="65.0" layoutY="394.0" prefHeight="25.0" prefWidth="224.0" promptText="Qty on hand" AnchorPane.bottomAnchor="294.8" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="991.0">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="65.0" layoutY="474.0" onAction="#qtyOnAction" prefHeight="25.0" prefWidth="224.0" promptText="QTY" AnchorPane.bottomAnchor="214.8" AnchorPane.rightAnchor="991.0" AnchorPane.topAnchor="474.0">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Text layoutX="67.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Id:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="oId" fill="#0b24bf" layoutX="156.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="123.0">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="txtUnit" labelFloat="true" layoutX="333.0" layoutY="394.0" prefHeight="25.0" prefWidth="224.0" promptText="Unit Price" AnchorPane.bottomAnchor="294.8">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+    </children>
 </AnchorPane>
