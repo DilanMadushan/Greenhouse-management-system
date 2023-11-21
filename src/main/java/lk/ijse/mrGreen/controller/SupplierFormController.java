@@ -25,6 +25,7 @@ import model.UserModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class SupplierFormController {
 
@@ -120,29 +121,65 @@ public class SupplierFormController {
     @FXML
     void addOnAction(ActionEvent event) {
 
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String company = txtCompany.getText();
-        int tel = Integer.parseInt(txtPhone.getText());
-        String userId = (String) cmbUserId.getValue();
+        boolean isValead = validateSupplier();
 
-        var dto = new SupplierDto(id,name,company,tel,userId);
+        if (isValead) {
 
-        try {
-            boolean isSaved = supModel.saveSupplier(dto);
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String company = txtCompany.getText();
+            int tel = Integer.parseInt(txtPhone.getText());
+            String userId = (String) cmbUserId.getValue();
 
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully").show();
-                initialize();
-                clearFealds();
-            }else{
-                new Alert(Alert.AlertType.WARNING,"Added Failed").show();
+            var dto = new SupplierDto(id, name, company, tel, userId);
+
+            try {
+                boolean isSaved = supModel.saveSupplier(dto);
+
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Added Successfully").show();
+                    initialize();
+                    clearFealds();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Added Failed").show();
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
+    }
+
+    private boolean validateSupplier() {
+        String id = txtId.getText();
+        boolean idMatch = Pattern.matches("[S]\\d{3,}",id);
+        if (!idMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid id").show();
+            return false;
+        }
+
+        String name = txtName.getText();
+        boolean nameMAtch = Pattern.matches("[A-za-z\\s]{4,}",name);
+        if (!nameMAtch) {
+            new Alert(Alert.AlertType.ERROR,"invalid name").show();
+            return false;
+        }
+
+        String company = txtCompany.getText();
+        boolean companyMatch = Pattern.matches("[A-za-z\\s\\d]{3,}",company);
+        if (!companyMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid company").show();
+            return false;
+        }
+
+        //int tel = Integer.parseInt(txtPhone.getText());
+        boolean telMatch = Pattern.matches("[0-9]{10}",txtPhone.getText());
+        if (!telMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid tel").show();
+            return false;
+        }
+        return true;
     }
 
     @FXML
@@ -166,25 +203,33 @@ public class SupplierFormController {
 
     @FXML
     void updateOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String company = txtCompany.getText();
-        int tel = Integer.parseInt(txtPhone.getText());
-        String userId = (String) cmbUserId.getValue();
 
-        var dto = new SupplierDto(id,name,company,tel,userId);
+        boolean isValead = validateSupplier();
 
-        try {
-            boolean isUpdated = supModel.updateSupplier(dto);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Update Successfully").show();
-                initialize();
-                clearFealds();
-            }else{
-                new Alert(Alert.AlertType.WARNING,"Update Failed").show();
+        if (isValead) {
+
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String company = txtCompany.getText();
+            int tel = Integer.parseInt(txtPhone.getText());
+            String userId = (String) cmbUserId.getValue();
+
+            System.out.println(tel);
+
+            var dto = new SupplierDto(id, name, company, tel, userId);
+
+            try {
+                boolean isUpdated = supModel.updateSupplier(dto);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Update Successfully").show();
+                    initialize();
+                    clearFealds();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Update Failed").show();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
     }

@@ -25,6 +25,7 @@ import model.LettuceModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class GreenhouseFormController {
 
@@ -118,27 +119,65 @@ public class GreenhouseFormController {
     }
     @FXML
     void addOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String letId= (String) cmbLettuce.getValue();
-        int temp = Integer.parseInt(txtTemp.getText());
-        double ph = Double.parseDouble(txtPh.getText());
 
-        var dto = new GreenHouseDto(id,name,letId,0,temp,ph);
+        boolean isValead = validateGreenhouse();
 
-        try {
-            boolean isSaved = greenModel.saveGreenhouse(dto);
+        if (isValead) {
 
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully").show();
-                initialize();
-                clearFeilds();
-            }else{
-                new Alert(Alert.AlertType.WARNING,"Added Failed").show();
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String letId = (String) cmbLettuce.getValue();
+            int temp = Integer.parseInt(txtTemp.getText());
+            double ph = Double.parseDouble(txtPh.getText());
+
+            var dto = new GreenHouseDto(id, name, letId, 0, temp, ph);
+
+            try {
+                boolean isSaved = greenModel.saveGreenhouse(dto);
+
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Added Successfully").show();
+                    initialize();
+                    clearFeilds();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Added Failed").show();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
+    }
+
+    private boolean validateGreenhouse() {
+        String id = txtId.getText();
+        boolean idMatch = Pattern.matches("[G]\\d{3,}",id);
+        if (!idMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid id").show();
+            return false;
+        }
+        String name = txtName.getText();
+        boolean nameMAtch = Pattern.matches("[A-za-z\\s]{4,}",name);
+        if (!nameMAtch) {
+            new Alert(Alert.AlertType.ERROR,"invalid name").show();
+            return false;
+        }
+
+        //int temp = Integer.parseInt(txtTemp.getText());
+        boolean tempMatch = Pattern.matches("[0-9]{1,}",txtTemp.getText());
+        if (!tempMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid Temperature").show();
+            return false;
+        }
+
+        //double ph = Double.parseDouble(txtPh.getText());
+        boolean phMatch = Pattern.matches("[0-9.]{1,}",txtPh.getText());
+        if (!phMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid ph").show();
+            return false;
+        }
+
+        return true;
+
     }
 
     @FXML
@@ -163,27 +202,33 @@ public class GreenhouseFormController {
 
     @FXML
     void updateOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String letId= (String) cmbLettuce.getValue();
-        int temp = Integer.parseInt(txtTemp.getText());
-        double ph = Double.parseDouble(txtPh.getText());
 
-        var dto = new GreenHouseDto(id,name,letId,0,temp,ph);
+        boolean isValead = validateGreenhouse();
 
-        try {
-            boolean isUpdated = greenModel.updateGreenhouse(dto);
+        if (isValead) {
 
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Update Successfully").show();
-                initialize();
-                clearFeilds();
-            }else {
-                new Alert(Alert.AlertType.WARNING,"Update Failed").show();
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String letId = (String) cmbLettuce.getValue();
+            int temp = Integer.parseInt(txtTemp.getText());
+            double ph = Double.parseDouble(txtPh.getText());
+
+            var dto = new GreenHouseDto(id, name, letId, 0, temp, ph);
+
+            try {
+                boolean isUpdated = greenModel.updateGreenhouse(dto);
+
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Update Successfully").show();
+                    initialize();
+                    clearFeilds();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Update Failed").show();
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
     }

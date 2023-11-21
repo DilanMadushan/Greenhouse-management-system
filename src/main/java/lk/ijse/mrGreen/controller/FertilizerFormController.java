@@ -29,6 +29,7 @@ import model.SupplierModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class FertilizerFormController {
 
@@ -165,30 +166,75 @@ public class FertilizerFormController {
 
     @FXML
     void addOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String company = txtCompany.getText();
-        Double unit = Double.parseDouble(txtUnit.getText());
-        int qty = Integer.parseInt(txtQty.getText());
-        String supId = (String) cmbSupId.getValue();
-        String l_id = (String) cmbLettId.getValue();
+
+        boolean isValead = validateFertilizer();
+
+        if (isValead) {
+
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String company = txtCompany.getText();
+            Double unit = Double.parseDouble(txtUnit.getText());
+            int qty = Integer.parseInt(txtQty.getText());
+            String supId = (String) cmbSupId.getValue();
+            String l_id = (String) cmbLettId.getValue();
 
 
-       var dto = new Fertilizerdto(id,name,company,unit,qty,supId,l_id);
+            var dto = new Fertilizerdto(id, name, company, unit, qty, supId, l_id);
 
-        try {
-            boolean isSaved = ferModel.SaveFertilizer(dto);
-            if (isSaved) {
-                 new Alert(Alert.AlertType.CONFIRMATION,"Added Successfully").show();
-                 initialize();
-                 clerFelads();
+            try {
+                boolean isSaved = ferModel.SaveFertilizer(dto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Added Successfully").show();
+                    initialize();
+                    clerFelads();
 
-            }else{
-                new Alert(Alert.AlertType.WARNING,"Added Failed").show();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Added Failed").show();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+
         }
+    }
+
+    private boolean validateFertilizer() {
+        String id = txtId.getText();
+        boolean idMatch = Pattern.matches("[F]\\d{3,}",id);
+        if (!idMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid id").show();
+            return false;
+        }
+
+        String name = txtName.getText();
+        boolean nameMAtch = Pattern.matches("[A-za-z\\s]{4,}",name);
+        if (!nameMAtch) {
+            new Alert(Alert.AlertType.ERROR,"invalid name").show();
+            return false;
+        }
+
+        String company = txtCompany.getText();
+        boolean companyMatch = Pattern.matches("[A-za-z\\s\\d]{3,}",company);
+        if (!companyMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid company").show();
+            return false;
+        }
+
+        //Double unit = Double.parseDouble(txtUnit.getText());
+        boolean unitMatch=Pattern.matches("[0-9.]{1,}",txtUnit.getText());
+        if (!unitMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid unit price").show();
+            return false;
+        }
+
+        //int qty = Integer.parseInt(txtQty.getText());
+        boolean qtyMatch=Pattern.matches("[0-9.]{1,}",txtQty.getText());
+        if (!qtyMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid Qty").show();
+            return false;
+        }
+        return true;
 
 
     }
@@ -224,27 +270,33 @@ public class FertilizerFormController {
 
     @FXML
     void updateOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String company = txtCompany.getText();
-        Double unit = Double.parseDouble(txtUnit.getText());
-        int qty = Integer.parseInt(txtQty.getText());
-        String supId = (String) cmbSupId.getValue();
-        String l_id = (String) cmbLettId.getValue();
 
-        var dto = new Fertilizerdto(id,name,company,unit,qty,supId,l_id);
+        boolean isValead = validateFertilizer();
 
-        try {
-            boolean isUpdated = ferModel.updateFertilizer(dto);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Updated Successfully").show();
-                initialize();
-                clerFelads();
-            }else{
-                new Alert(Alert.AlertType.WARNING,"Update Failed").show();
+        if (isValead) {
+
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String company = txtCompany.getText();
+            Double unit = Double.parseDouble(txtUnit.getText());
+            int qty = Integer.parseInt(txtQty.getText());
+            String supId = (String) cmbSupId.getValue();
+            String l_id = (String) cmbLettId.getValue();
+
+            var dto = new Fertilizerdto(id, name, company, unit, qty, supId, l_id);
+
+            try {
+                boolean isUpdated = ferModel.updateFertilizer(dto);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Updated Successfully").show();
+                    initialize();
+                    clerFelads();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Update Failed").show();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
 

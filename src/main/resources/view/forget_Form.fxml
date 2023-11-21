@@ -26,12 +26,16 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtPassword" disable="true" labelFloat="true" layoutX="76.99999999999997" layoutY="272.0" prefHeight="26.0" prefWidth="214.0" promptText="Password" AnchorPane.leftAnchor="76.99999999999997" AnchorPane.rightAnchor="81.60000000000002" />
       <ImageView fitHeight="30.0" fitWidth="32.0" layoutX="331.0" layoutY="9.0" onMouseClicked="#closeOnAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icons8-close-50 (1).png" />
          </image>
       </ImageView>
       <Hyperlink layoutX="140.0" layoutY="421.0" prefHeight="24.0" prefWidth="66.0" />
+      <Text fx:id="txtEmailCheck" fill="#cf0c0c" layoutX="86.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check your Email" visible="false" wrappingWidth="195.73674774169922">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

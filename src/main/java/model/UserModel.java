@@ -74,4 +74,24 @@ public class UserModel {
 
        return null;
     }
+
+    public String getEmail(String name) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT email FROM user WHERE name = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        pstm.setString(1,name);
+
+        try{
+            ResultSet resultSet = pstm.executeQuery();
+
+            resultSet.next();
+            return resultSet.getString("email");
+
+        }catch (Exception e){
+
+        }
+
+        return null;
+    }
 }

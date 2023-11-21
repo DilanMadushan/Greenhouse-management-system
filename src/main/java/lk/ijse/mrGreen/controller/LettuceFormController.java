@@ -24,6 +24,7 @@ import model.SupplierModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
 public class LettuceFormController {
@@ -147,30 +148,87 @@ public class LettuceFormController {
 
     @FXML
     void addOnAction(ActionEvent event) {
+        boolean isValead = validateLettuce();
+
+        if (isValead) {
+            String id = txtId.getText();
+            String name = txtName.getText();
+            int temp = Integer.parseInt(txtTemp.getText());
+            int humid = Integer.parseInt(txtHumid.getText());
+            double qty = Double.parseDouble(txtQty.getText());
+            double seed = Double.parseDouble(txtSeedQty.getText());
+            double unit = Double.parseDouble(txtunit.getText());
+            String suppId = (String) cmbSupId.getValue();
+
+
+            var dto = new LettuceDto(id, name, temp, humid, qty, seed, unit, suppId);
+
+
+            try {
+                boolean isSaved = lettModel.saveLettuce(dto);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Saved Successfully").show();
+                    initialize();
+                    clearFields();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Save Failed").show();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+    private boolean validateLettuce() {
+
         String id = txtId.getText();
+        boolean idMatch = Pattern.matches("[L]\\d{3,}",id);
+        if(!idMatch){
+            new Alert(Alert.AlertType.ERROR,"invalid id").show();
+            return false;
+        }
         String name= txtName.getText();
-        int temp = Integer.parseInt(txtTemp.getText());
-        int humid = Integer.parseInt(txtHumid.getText());
-        double qty = Double.parseDouble(txtQty.getText());
-        double seed = Double.parseDouble(txtSeedQty.getText());
-        double unit = Double.parseDouble(txtunit.getText());
+        boolean nameMatch = Pattern.matches("[A-za-z\\s]{4,}",name);
+        if (!nameMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid name").show();
+            return false;
+        }
+        //int temp = Integer.parseInt(txtTemp.getText());
+        boolean tempMatch = Pattern.matches("[0-9.]{1,}",txtTemp.getText());
+        if (!tempMatch) {
+                new Alert(Alert.AlertType.ERROR,"invalid Temperature").show();
+                return false;
+        }
+
+        //int humid = Integer.parseInt(txtHumid.getText());
+        boolean humidMatch = Pattern.matches("[0-9.]{1,}",txtHumid.getText());
+        if (!humidMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid Humidity").show();
+            return false;
+        }
+        //double qty = Double.parseDouble(txtQty.getText());
+        boolean qtyMatch=Pattern.matches("[0-9.]{1,}",txtQty.getText());
+        if (!qtyMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid Qty").show();
+            return false;
+        }
+
+        //double seed = Double.parseDouble(txtSeedQty.getText());
+        boolean seedMatch=Pattern.matches("[0-9.]{1,}",txtSeedQty.getText());
+        if (!seedMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid Seed").show();
+            return false;
+        }
+        //double unit = Double.parseDouble(txtunit.getText());
+        boolean unitMatch=Pattern.matches("[0-9.]{1,}",txtunit.getText());
+        if (!unitMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid unit price").show();
+            return false;
+        }
         String suppId= (String) cmbSupId.getValue();
 
-
-        var dto = new LettuceDto(id,name,temp,humid,qty,seed,unit,suppId);
-
-        try {
-            boolean isSaved=lettModel.saveLettuce(dto);
-            if(isSaved){
-                new Alert(Alert.AlertType.CONFIRMATION,"Saved Successfully").show();
-                initialize();
-                clearFields();
-            }else {
-                new Alert(Alert.AlertType.WARNING,"Save Failed").show();
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        return true;
 
     }
 
@@ -196,29 +254,33 @@ public class LettuceFormController {
 
     @FXML
     void updateOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name= txtName.getText();
-        int temp = Integer.parseInt(txtTemp.getText());
-        int humid = Integer.parseInt(txtHumid.getText());
-        double qty = Double.parseDouble(txtQty.getText());
-        double seed = Double.parseDouble(txtSeedQty.getText());
-        double unit = Double.parseDouble(txtunit.getText());
-        String suppId= (String) cmbSupId.getValue();
+        boolean isValead = validateLettuce();
+
+        if (isValead) {
+            String id = txtId.getText();
+            String name = txtName.getText();
+            int temp = Integer.parseInt(txtTemp.getText());
+            int humid = Integer.parseInt(txtHumid.getText());
+            double qty = Double.parseDouble(txtQty.getText());
+            double seed = Double.parseDouble(txtSeedQty.getText());
+            double unit = Double.parseDouble(txtunit.getText());
+            String suppId = (String) cmbSupId.getValue();
 
 
-        var dto = new LettuceDto(id,name,temp,humid,qty,seed,unit,suppId);
+            var dto = new LettuceDto(id, name, temp, humid, qty, seed, unit, suppId);
 
-        try {
-            boolean isUpdated =lettModel.updateLettuce(dto);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Updated Successfully").show();
-                initialize();
-                clearFields();
-            } else{
-                new Alert(Alert.AlertType.WARNING,"Update Failed").show();
+            try {
+                boolean isUpdated = lettModel.updateLettuce(dto);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Updated Successfully").show();
+                    initialize();
+                    clearFields();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Update Failed").show();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
     }

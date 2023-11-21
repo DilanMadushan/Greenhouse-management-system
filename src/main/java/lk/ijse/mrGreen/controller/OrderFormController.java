@@ -30,6 +30,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class OrderFormController {
 
@@ -152,46 +153,62 @@ public class OrderFormController {
 
     @FXML
     void addToCartOnAction(ActionEvent event) {
-        String id = (String) cmbLettId.getValue();
-        String name = txtLettName.getText();
 
-        if(Double.parseDouble(txtQtyOnHand.getText())<Double.parseDouble(txtQty.getText())){
-            new Alert(Alert.AlertType.ERROR,"out of Stock").show();
-            return;
-        }
-        double qty =Double.parseDouble(txtQty.getText());
-        double unit = Double.parseDouble(txtUnit.getText());
-        double total = unit * qty;
+        boolean isValead = validateOrder();
 
-        var orderList = new CartTm(id,name,qty,unit,total);
+        if (isValead) {
 
-        if(!obList.isEmpty()){
+            String id = (String) cmbLettId.getValue();
+            String name = txtLettName.getText();
 
-            for (int i = 0; i < tblOrder.getItems().size(); i++) {
-                if(colId.getCellData(i).equals(id)){
-                    double col_qty = (double) colQty.getCellData(i);
-                    qty += col_qty;
-                    total = unit * qty;
+            if (Double.parseDouble(txtQtyOnHand.getText()) < Double.parseDouble(txtQty.getText())) {
+                new Alert(Alert.AlertType.ERROR, "out of Stock").show();
+                return;
+            }
+            double qty = Double.parseDouble(txtQty.getText());
+            double unit = Double.parseDouble(txtUnit.getText());
+            double total = unit * qty;
 
-                    obList.get(i).setQty(qty);
-                    obList.get(i).setTotal(total);
+            var orderList = new CartTm(id, name, qty, unit, total);
 
-                    calculateTotal();
-                    tblOrder.refresh();
-                    return;
+            if (!obList.isEmpty()) {
+
+                for (int i = 0; i < tblOrder.getItems().size(); i++) {
+                    if (colId.getCellData(i).equals(id)) {
+                        double col_qty = (double) colQty.getCellData(i);
+                        qty += col_qty;
+                        total = unit * qty;
+
+                        obList.get(i).setQty(qty);
+                        obList.get(i).setTotal(total);
+
+                        calculateTotal();
+                        tblOrder.refresh();
+                        return;
+                    }
                 }
+
             }
 
+            obList.add(orderList);
+
+
+            tblOrder.setItems(obList);
+            calculateTotal();
+            txtQty.clear();
         }
 
-        obList.add(orderList);
-
-
-        tblOrder.setItems(obList);
-        calculateTotal();
-        txtQty.clear();
-
     }
+
+    private boolean validateOrder() {
+        boolean qtyMatch= Pattern.matches("[0-9.]{1,}",txtQty.getText());
+        if (!qtyMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid Qty").show();
+            return false;
+        }
+        return true;
+    }
+
     private void calculateTotal() {
         double total = 0;
         for(int i = 0; i < tblOrder.getItems().size(); i++){
@@ -223,6 +240,8 @@ public class OrderFormController {
             cartTmList.add(cartTm);
         }
         var placeOrderDto = new PlaceOrderDto(orderId,date,cus_id,cartTmList);
+
+        System.out.println(placeOrderDto);
 
         try {
             boolean isSuccess = placeOrderModel.placeOrder(placeOrderDto);

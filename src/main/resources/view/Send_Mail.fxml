@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.SendMailController">
+    <children>
+        <Label layoutX="135.0" layoutY="61.0" opacity="0.5" prefHeight="137.0" prefWidth="479.0" text="Send Malil" textFill="#00c9b7">
+            <font>
+                <Font name="System Bold" size="93.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1188.0" layoutY="23.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/icons8-back-64.png" />
+            </image>
+        </ImageView>
+      <JFXTextField fx:id="txtEmail" layoutX="191.0" layoutY="283.0" prefHeight="25.0" prefWidth="367.0" promptText="Email" AnchorPane.bottomAnchor="412.0" />
+      <Text layoutX="139.0" layoutY="295.1826171875" strokeType="OUTSIDE" strokeWidth="0.0" text="To:" wrappingWidth="29.318359375" AnchorPane.bottomAnchor="420.55078125">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <JFXTextField fx:id="txtSubject" layoutX="190.0" layoutY="349.0" prefHeight="25.0" prefWidth="367.0" promptText="Subject" AnchorPane.bottomAnchor="346.0" />
+      <Text layoutX="99.0" layoutY="365.8466796875" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject:" wrappingWidth="69.318359375" AnchorPane.bottomAnchor="349.88671875">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtMessage" layoutX="190.0" layoutY="420.0" prefHeight="185.0" prefWidth="559.0" promptText="Enter Message" />
+      <Text layoutX="92.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message:" wrappingWidth="75.318359375">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="806.0" layoutY="566.0" onAction="#btnSendOnAction" prefHeight="46.0" prefWidth="158.0" style="-fx-background-color: #00c9b7; -fx-background-radius: 20;" text="send" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label fx:id="lblStatus" layoutX="995.0" layoutY="589.0" textFill="#0f23d6" />
+    </children>
+</AnchorPane>

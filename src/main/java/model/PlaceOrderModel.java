@@ -26,7 +26,9 @@ public class PlaceOrderModel {
             connection = DbConnection.getInstance().getConnection();
             connection.setAutoCommit(false);
 
+
             boolean isOrderSaved = orderModel.saveOrder(o_id, cus_id, date);
+            System.out.println("1 " + isOrderSaved );
             if (isOrderSaved) {
                 System.out.println("1 " + isOrderSaved );
                 boolean isUpdate = lettModel.updateLettuceQty(placeOrderDto.getCartTmList());

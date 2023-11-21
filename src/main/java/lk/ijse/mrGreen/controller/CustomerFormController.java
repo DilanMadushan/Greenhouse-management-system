@@ -22,6 +22,7 @@ import model.CustomerModel;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class CustomerFormController {
 
@@ -92,27 +93,64 @@ public class CustomerFormController {
 
     @FXML
     void addOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String address = txtAddress.getText();
-        int tel =Integer.parseInt(txtPhone.getText());
 
-        CustomerDto dto = new CustomerDto(id,name,address,tel);
+        boolean isValead = validateCustomer();
 
-        try {
-            boolean isSaved = cusmodel.saveCustomer(dto);
+        if (isValead) {
 
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Added Successfilly").show();
-                initialize();
-                clearFields();
-            }else {
-                new Alert(Alert.AlertType.WARNING,"Addes Failed").show();
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String address = txtAddress.getText();
+            int tel = Integer.parseInt(txtPhone.getText());
+
+            CustomerDto dto = new CustomerDto(id, name, address, tel);
+
+            try {
+                boolean isSaved = cusmodel.saveCustomer(dto);
+
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Added Successfilly").show();
+                    initialize();
+                    clearFields();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Addes Failed").show();
+                }
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
+    }
+
+    private boolean validateCustomer() {
+        String id = txtId.getText();
+        boolean idMatch = Pattern.matches("[C]\\d{3,}",id);
+        if (!idMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid id").show();
+            return false;
+        }
+
+        String name = txtName.getText();
+        boolean nameMAtch = Pattern.matches("[A-za-z\\s]{4,}",name);
+        if (!nameMAtch) {
+            new Alert(Alert.AlertType.ERROR,"invalid name").show();
+            return false;
+        }
+
+        String address = txtAddress.getText();
+        boolean addressMatch= Pattern.matches("[A-za-z]{3,}",address);
+        if (!addressMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid address").show();
+            return false;
+        }
+
+       // int tel =Integer.parseInt(txtPhone.getText());
+        boolean telMatch = Pattern.matches("[0-9]{10}",txtPhone.getText());
+        if (!telMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid tel").show();
+            return false;
+        }
+        return true;
     }
 
     @FXML
@@ -135,24 +173,29 @@ public class CustomerFormController {
 
     @FXML
     void updateOnAction(ActionEvent event) {
-        String id = txtId.getText();
-        String name = txtName.getText();
-        String address = txtAddress.getText();
-        int tel =Integer.parseInt(txtPhone.getText());
+        boolean isValead = validateCustomer();
 
-        CustomerDto dto = new CustomerDto(id,name,address,tel);
+        if (isValead) {
 
-        try {
-            boolean isUpdated = cusmodel.updateCustomer(dto);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION,"Updated Successfully").show();
-                initialize();
-                clearFields();
-            }else{
-                new Alert(Alert.AlertType.WARNING,"Update Failed").show();
+            String id = txtId.getText();
+            String name = txtName.getText();
+            String address = txtAddress.getText();
+            int tel = Integer.parseInt(txtPhone.getText());
+
+            CustomerDto dto = new CustomerDto(id, name, address, tel);
+
+            try {
+                boolean isUpdated = cusmodel.updateCustomer(dto);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Updated Successfully").show();
+                    initialize();
+                    clearFields();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Update Failed").show();
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
     }

@@ -33,6 +33,7 @@ public class OrderModel {
     }
 
     public boolean saveOrder(String oId, String cusId, LocalDate date) throws SQLException {
+        System.out.println(oId+""+cusId+""+date);
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "INSERT INTO orders VALUES(?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -47,5 +48,18 @@ public class OrderModel {
 
         }
         return false;
+    }
+
+    public int getOrderCount() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql ="SELECT COUNT(*) AS num_of_orders FROM orders";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet=pstm.executeQuery();
+
+        resultSet.next();
+
+        int count = resultSet.getInt("num_of_orders");
+        return count;
     }
 }

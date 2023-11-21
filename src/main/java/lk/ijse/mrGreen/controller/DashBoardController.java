@@ -16,10 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import model.CustomerModel;
-import model.EmployeeModel;
-import model.GreenHouseModel;
-import model.LettuceModel;
+import model.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -33,6 +30,7 @@ import java.util.Optional;
 
 public class DashBoardController {
 
+    public Text txtOrders;
     @FXML
     private Text txtDate;
 
@@ -58,6 +56,7 @@ public class DashBoardController {
     EmployeeModel empModel = new EmployeeModel();
     CustomerModel cusModel = new CustomerModel();
     GreenHouseModel greenModel = new GreenHouseModel();
+    OrderModel orderModel = new OrderModel();
 
     @FXML
     private AnchorPane root1;
@@ -68,7 +67,18 @@ public class DashBoardController {
         setEmployeeCount();
         setCustomerCount();
         setGreenhouseCount();
+        setOrderCount();
     }
+
+    private void setOrderCount() {
+        try {
+            String count = Integer.toString(orderModel.getOrderCount());
+            txtOrders.setText(count);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     private void setGreenhouseCount() {
 
@@ -145,7 +155,13 @@ public class DashBoardController {
     }
 
     @FXML
-    void aboutOnAction(ActionEvent event) {
+    void aboutOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Aboutus_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
+
+        Scene scene = new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
 
     }
 
@@ -191,7 +207,7 @@ public class DashBoardController {
     }
     @FXML
     void ControlOnAction(ActionEvent event) throws IOException {
-        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/control_Panel.fxml"));
+        Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Send_Mail.fxml"));
         Stage stage= (Stage) root1.getScene().getWindow();
 
         Scene scene= new Scene(rootNode);

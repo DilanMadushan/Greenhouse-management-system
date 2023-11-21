@@ -266,7 +266,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Text>
-                  <Text layoutX="132.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20" textAlignment="CENTER" wrappingWidth="139.7607421875">
+                  <Text fx:id="txtOrders" layoutX="132.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="20" textAlignment="CENTER" wrappingWidth="139.7607421875">
                      <font>
                         <Font size="68.0" />
                      </font>

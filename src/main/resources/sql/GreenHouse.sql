@@ -8,10 +8,11 @@ create table user(
     name varchar(100)not null,
     password varchar(20)not null,
     job_role varchar(50)not null
+    email varchar(100)not null
 );
 
-insert into user values ("U001","Dilan","Dilan123","Manager");
-insert into user values ("U002","Kasun","Kasun007","Accountant");
+insert into user values ("U001","Dilan","Dilan123","Manager","dilanmadushanka6013@gmail.com");
+insert into user values ("U002","Kasun","Kasun007","Accountant","dmgaming6013@gmail.com");
 
 create table supplier(
     sup_id varchar(30) primary key ,
@@ -79,6 +80,7 @@ create table order_details(
     l_id varchar(50)not null ,
     qty int not null ,
     unit_price double not null ,
+    total double not null,
     constraint foreign key(order_id)references orders(order_id)
     on update cascade on delete cascade,
     constraint foreign key (l_id)references lettuce(l_id)
@@ -135,6 +137,12 @@ INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
 INSERT INTO greenhouse (g_id,name,water_temp,water_ph) VALUES ("G001","Deep",10,10.0);
 
 alter table order_details  add total double not null ;
+
+alter table user add email varchar(100)not null ;
+
+
+
+
 
 
 
