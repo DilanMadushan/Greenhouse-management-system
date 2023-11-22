@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Employee_details" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="066379d8-8609-4bc4-a0ec-e8c31c1845f2">
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="age" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="job role" class="java.lang.String"/>
+	<parameter name="Salary" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="72" backcolor="#27D6C2" uuid="6ca18667-8879-46c9-9c39-e85d7e5a0d72">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="18" y="8" width="340" height="48" forecolor="#FFFFFF" uuid="d1e2807c-3bae-49bf-9ccb-8cec9c9b10ff"/>
+					<textElement>
+						<font size="38" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Employee Details]]></text>
+				</staticText>
+				<textField pattern="MMMMM dd, yyyy">
+					<reportElement x="410" y="26" width="136" height="20" uuid="03f7cdb0-99e0-4e53-8109-8bb4e4f799c7"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="322" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="554" height="322" forecolor="#FFFFFF" backcolor="#EBE8E8" uuid="17e23b47-e201-4afb-b0bc-fd994f4d6da8"/>
+				<staticText>
+					<reportElement x="116" y="28" width="64" height="30" uuid="864fdcd5-eb1a-413f-8a66-5bd9eeed40d2">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Name : ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="116" y="88" width="94" height="30" uuid="b4a57529-62b5-4f89-8769-bd9d31d2fb73">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Age :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="116" y="148" width="84" height="30" uuid="42fd890f-261c-449a-afe5-4bcaed47952f">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Address :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="116" y="208" width="84" height="30" uuid="65021556-c166-4c2d-bfe1-a7d84595bf28">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Job role :]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="260" y="30" width="111" height="30" uuid="a06f78fd-ca30-4f2f-b639-e1e479e7f532">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="88" width="111" height="30" uuid="e9346b8e-ba4a-4f21-9828-daf4cddeed56">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="150" width="111" height="30" uuid="f4f71b7c-fd40-46f3-a18b-359f7585e5d7">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="208" width="111" height="30" uuid="7b2b9e08-ae23-4134-99cb-53dfd7c01830">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{job role}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="259" y="266" width="111" height="30" uuid="822611d7-bb92-4faf-bfda-40a3d01307b4">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Salary}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="116" y="266" width="64" height="30" uuid="f4c08ebb-00ac-4781-996c-6ecc5d240224">
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<textElement>
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Salary:]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

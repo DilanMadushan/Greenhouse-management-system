@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0c39d005-f953-4035-b3fa-9f50801b9aec">
+	<parameter name="id" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="tel" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="72" backcolor="#27D6C2" uuid="66b5716b-cbd6-4d31-9ddb-9a6cda2c56e8">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="18" y="8" width="340" height="48" forecolor="#FFFFFF" uuid="0470ac32-5e52-4bda-b6ae-de8f332c92a5"/>
+					<textElement>
+						<font size="38" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Customer Details]]></text>
+				</staticText>
+				<textField pattern="MMMMM dd, yyyy">
+					<reportElement x="410" y="26" width="136" height="20" uuid="367f976e-2fc8-418e-98f9-9058eee65c9e"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="270" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout"/>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="10" width="554" height="260" forecolor="#FFFFFF" backcolor="#EBE8E8" uuid="adc71aa3-075b-42b3-96ed-f17290e6ba87"/>
+			</frame>
+			<textField>
+				<reportElement x="260" y="28" width="141" height="30" uuid="bc4352aa-dec1-4dfc-8639-28445a963947"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="88" width="138" height="30" uuid="99ad8f70-c97c-4e50-ac29-0d90caa84f4c"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="148" width="138" height="30" uuid="8ae59fad-ac9e-4aee-82a7-599732c1adc6">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="208" width="138" height="30" uuid="90460133-77a2-4dbb-9db4-454b3cd8e0e5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tel}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="116" y="28" width="64" height="30" uuid="42eb213a-357b-4275-acab-06bf8e1cd0ca">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Id : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="88" width="94" height="30" uuid="e2f7242f-b380-4be9-bd86-ba489468c593">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="148" width="84" height="30" uuid="094a299a-739d-4628-8828-0fb18edeaae9">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Address :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="208" width="64" height="30" uuid="28a76421-be52-4642-b357-a0546ec7450b">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Tel :]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

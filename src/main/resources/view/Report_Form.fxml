@@ -1,30 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.ReportFormController ">
+<AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.ReportFormController">
     <children>
-        <Label layoutX="357.0" layoutY="50.0" opacity="0.5" prefHeight="103.0" prefWidth="531.0" text="Report Manage" textFill="#00c9b7">
+        <Label layoutX="88.0" layoutY="33.0" opacity="0.5" prefHeight="120.0" prefWidth="602.0" text="Report form" textFill="#00c9b7">
             <font>
-                <Font name="System Bold" size="70.0" />
+                <Font name="System Bold" size="91.0" />
             </font>
         </Label>
-        <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1188.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-            <onMouseClicked>#backOnAction</onMouseClicked>
+      <Pane layoutX="148.0" layoutY="218.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="218.0">
+         <children>
+            <JFXComboBox fx:id="cmbCustomer" layoutX="23.0" layoutY="91.0" prefHeight="32.0" prefWidth="211.0" promptText="Customer id" />
+            <Text fill="WHITE" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="169.0" onAction="#CustomerReportOnAction" prefHeight="38.0" prefWidth="113.0" style="-fx-background-color: #00c9b7;" text="Generate" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+        <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1188.0" layoutY="23.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/icons8-back-64.png" />
             </image>
         </ImageView>
-      <Pane layoutX="76.0" layoutY="206.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
-      <Pane layoutX="470.0" layoutY="206.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
-      <Pane layoutX="866.0" layoutY="206.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
-      <Pane layoutX="76.0" layoutY="437.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
-      <Pane layoutX="470.0" layoutY="437.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
-      <Pane layoutX="873.0" layoutY="437.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
+      <Pane layoutX="516.0" layoutY="217.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="218.0">
+         <children>
+            <JFXComboBox fx:id="cmbEmpId" layoutX="23.0" layoutY="91.0" prefHeight="32.0" prefWidth="211.0" promptText="Employee id" />
+            <Text fill="WHITE" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Details" wrappingWidth="168.474609375">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="169.0" onAction="#EmployeeReportOnAction" prefHeight="38.0" prefWidth="113.0" style="-fx-background-color: #00c9b7;" text="Generate" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="883.0" layoutY="218.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="218.0">
+         <children>
+            <JFXComboBox fx:id="cmbSuppId" layoutX="23.0" layoutY="91.0" prefHeight="32.0" prefWidth="211.0" promptText="Supplier id" />
+            <Text fill="WHITE" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Details">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <JFXButton buttonType="RAISED" layoutX="66.0" layoutY="169.0" onAction="#supplierReportOnAction" prefHeight="38.0" prefWidth="113.0" style="-fx-background-color: #00c9b7;" text="Generate" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
     </children>
 </AnchorPane>

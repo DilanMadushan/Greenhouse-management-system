@@ -221,8 +221,13 @@ public class DashBoardController {
         stage.centerOnScreen();
     }
     @FXML
-    void ControlOnAction(ActionEvent event) throws IOException {
+    void reportsOnAction(ActionEvent event) throws IOException {
+        Parent rootNode =FXMLLoader.load(getClass().getResource("/view/Report_Form.fxml"));
+        Stage stage = (Stage) root1.getScene().getWindow();
 
+        Scene scene=new Scene(rootNode);
+        stage.setScene(scene);
+        stage.centerOnScreen();
 
     }
 

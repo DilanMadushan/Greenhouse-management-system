@@ -92,4 +92,27 @@ public class SupplierModel {
         int count = resultSet.getInt("sup_count");
         return count;
     }
+
+    public SupplierDto getSupplierDetails(String suppId) throws SQLException {
+        Connection connection =DbConnection.getInstance().getConnection();
+        String sql = "SELECT * FROM supplier WHERE sup_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        pstm.setString(1,suppId);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        SupplierDto dto = null;
+
+        if(resultSet.next()){
+            dto = new SupplierDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getInt(4),
+                    resultSet.getString(5)
+            );
+        }
+        return dto;
+    }
 }

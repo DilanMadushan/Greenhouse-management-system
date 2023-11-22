@@ -127,4 +127,28 @@ public class EmployeeModel {
 
             return name;
     }
+
+    public EmployeeDto getEmployeeDetails(String id) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql ="SELECT * FROM employee WHERE emp_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        pstm.setString(1,id);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        EmployeeDto dto = null;
+
+        if(resultSet.next()){
+            dto = new EmployeeDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getInt(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getDouble(6)
+            );
+        }
+        return dto;
+    }
 }

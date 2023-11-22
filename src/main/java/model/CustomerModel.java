@@ -111,4 +111,26 @@ public class CustomerModel {
         }
         return null;
     }
+
+    public CustomerDto getCustomerDetils(String cusId) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql ="SELECT * FROM customer WHERE cus_id = ?";
+
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,cusId);
+
+        ResultSet resultSet=pstm.executeQuery();
+
+        CustomerDto dto = null;
+
+        if(resultSet.next()){
+           dto = new CustomerDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getInt(4)
+            );
+        }
+        return dto;
+    }
 }

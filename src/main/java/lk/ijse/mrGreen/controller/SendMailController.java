@@ -72,7 +72,8 @@ public class SendMailController {
             thread.start();
 
             System.out.println("end");
-            lblStatus.setText("sended");
+            lblStatus.setText("sent successfully");
+
         }
     }
 
