@@ -206,6 +206,17 @@ public class OrderFormController {
             new Alert(Alert.AlertType.ERROR,"invalid Qty").show();
             return false;
         }
+        String id= (String) cmdCustomerId.getValue();
+        if(id==null){
+            new Alert(Alert.AlertType.ERROR,"Customer id is empty").show();
+            return false;
+        }
+        String lettid= (String) cmbLettId.getValue();
+        if(lettid==null){
+            new Alert(Alert.AlertType.ERROR,"Lettuce id is empty").show();
+            return false;
+        }
+
         return true;
     }
 
@@ -254,6 +265,7 @@ public class OrderFormController {
             throw new RuntimeException(e);
         }
         clearAll();
+        initialize();
 
 
     }

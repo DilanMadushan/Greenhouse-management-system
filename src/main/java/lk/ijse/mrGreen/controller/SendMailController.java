@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -24,6 +25,7 @@ import javafx.stage.Stage;
 //import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 public class SendMailController {
     @FXML
@@ -54,20 +56,36 @@ public class SendMailController {
 
     @FXML
     void btnSendOnAction(ActionEvent event) {
-        System.out.println("Start");
-        lblStatus.setText("sending...");
-        Mail mail = new Mail(); //creating an instance of Mail class
-        mail.setMsg(txtMessage.getText());//email message
-        mail.setTo(txtEmail.getText()); //receiver's mail
-        mail.setSubject(txtSubject.getText()); //email subject
 
-        Thread thread = new Thread(mail);
-        thread.start();
+        boolean isvalid = validation();
 
-        System.out.println("end");
-        lblStatus.setText("sended");
+        if (isvalid) {
 
+            System.out.println("Start");
+            lblStatus.setText("sending...");
+            Mail mail = new Mail(); //creating an instance of Mail class
+            mail.setMsg(txtMessage.getText());//email message
+            mail.setTo(txtEmail.getText()); //receiver's mail
+            mail.setSubject(txtSubject.getText()); //email subject
+
+            Thread thread = new Thread(mail);
+            thread.start();
+
+            System.out.println("end");
+            lblStatus.setText("sended");
+        }
     }
+
+    private boolean validation() {
+        String email=txtEmail.getText();
+        boolean isMatch = Pattern.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",email);
+        if (!isMatch) {
+            new Alert(Alert.AlertType.ERROR,"invalid email").show();
+            return false;
+        }
+        return true;
+    }
+
     public static class Mail implements Runnable{
         private String msg;
         private String to;
@@ -116,24 +134,6 @@ public class SendMailController {
                 System.out.println("not sent. empty msg!");
             }
         }
-
-
-//        public void run() {
-//            if (msg != null) {
-//                try {
-//                    boolean b = outMail();
-//                    if(b){
-//                        lblStatus.setStyle("-fx-text-fill: green");
-//                        lblStatus.setText("Sent Successfully !");
-//                    }
-//                } catch (MessagingException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            } else {
-//                lblStatus.setStyle("-fx-text-fill: red");
-//                lblStatus.setText("not Sent!");
-//            }
-//        }
     }
 
 }

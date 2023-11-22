@@ -179,6 +179,12 @@ public class SupplierFormController {
             new Alert(Alert.AlertType.ERROR,"invalid tel").show();
             return false;
         }
+        String userId = (String) cmbUserId.getValue();
+        if(userId==null){
+            new Alert(Alert.AlertType.ERROR,"user id is empty").show();
+            return false;
+        }
+
         return true;
     }
 

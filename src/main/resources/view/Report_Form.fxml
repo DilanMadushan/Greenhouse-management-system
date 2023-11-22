@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.ReportFormController ">
+    <children>
+        <Label layoutX="357.0" layoutY="50.0" opacity="0.5" prefHeight="103.0" prefWidth="531.0" text="Report Manage" textFill="#00c9b7">
+            <font>
+                <Font name="System Bold" size="70.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1188.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <onMouseClicked>#backOnAction</onMouseClicked>
+            <image>
+                <Image url="@../assets/icons8-back-64.png" />
+            </image>
+        </ImageView>
+      <Pane layoutX="76.0" layoutY="206.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
+      <Pane layoutX="470.0" layoutY="206.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
+      <Pane layoutX="866.0" layoutY="206.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
+      <Pane layoutX="76.0" layoutY="437.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
+      <Pane layoutX="470.0" layoutY="437.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
+      <Pane layoutX="873.0" layoutY="437.0" prefHeight="155.0" prefWidth="281.0" style="-fx-background-color: #00c9b7;" />
+    </children>
+</AnchorPane>

@@ -234,6 +234,18 @@ public class FertilizerFormController {
             new Alert(Alert.AlertType.ERROR,"invalid Qty").show();
             return false;
         }
+        String supId = (String) cmbSupId.getValue();
+        if(supId==null){
+            new Alert(Alert.AlertType.ERROR,"supplier id is empty").show();
+            return false;
+        }
+
+        String l_id = (String) cmbLettId.getValue();
+        if (l_id==null) {
+            new Alert(Alert.AlertType.ERROR,"lettuce id is empty").show();
+            return false;
+        }
+
         return true;
 
 

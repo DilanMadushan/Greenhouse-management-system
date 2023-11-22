@@ -21,15 +21,23 @@ public class OrderModel {
     }
 
     private String splitOrderId(String currentId) {
-        if(currentId !=null){
-            String[] split = currentId.split("O0");
-
-            int id = Integer.parseInt(split[1]); //01
+        if(currentId != null) {
+            String[] strings = currentId.split("O0");
+            int id = Integer.parseInt(strings[1]);
             id++;
-            return "O00" + id;
-        }else {
-            return "O001";
+            String ID = String.valueOf(id);
+            int length = ID.length();
+            if (length < 2){
+                return "O00"+id;
+            }else {
+                if (length < 3){
+                    return "O0"+id;
+                }else {
+                    return "O"+id;
+                }
+            }
         }
+        return "O001";
     }
 
     public boolean saveOrder(String oId, String cusId, LocalDate date) throws SQLException {

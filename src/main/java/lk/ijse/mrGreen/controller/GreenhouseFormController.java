@@ -175,6 +175,11 @@ public class GreenhouseFormController {
             new Alert(Alert.AlertType.ERROR,"invalid ph").show();
             return false;
         }
+        String letId = (String) cmbLettuce.getValue();
+        if(letId==null){
+            new Alert(Alert.AlertType.ERROR,"Lettuce id is empty").show();
+            return false;
+        }
 
         return true;
 

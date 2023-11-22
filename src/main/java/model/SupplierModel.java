@@ -79,4 +79,17 @@ public class SupplierModel {
 
         return pstm.executeUpdate() > 0;
     }
+
+    public int getSupplierCount() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql ="SELECT COUNT(*)As sup_count from supplier";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        resultSet.next();
+
+        int count = resultSet.getInt("sup_count");
+        return count;
+    }
 }

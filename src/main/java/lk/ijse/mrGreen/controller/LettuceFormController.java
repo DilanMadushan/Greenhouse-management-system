@@ -227,6 +227,10 @@ public class LettuceFormController {
             return false;
         }
         String suppId= (String) cmbSupId.getValue();
+        if(suppId==null){
+            new Alert(Alert.AlertType.ERROR,"Supplier id is empty").show();
+            return false;
+        }
 
         return true;
 

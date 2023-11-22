@@ -30,7 +30,11 @@ import java.util.Optional;
 
 public class DashBoardController {
 
+    @FXML
+    private Text txtSupplier;
+    @FXML
     public Text txtOrders;
+
     @FXML
     private Text txtDate;
 
@@ -58,6 +62,8 @@ public class DashBoardController {
     GreenHouseModel greenModel = new GreenHouseModel();
     OrderModel orderModel = new OrderModel();
 
+    SupplierModel suppModel = new SupplierModel();
+
     @FXML
     private AnchorPane root1;
 
@@ -68,6 +74,16 @@ public class DashBoardController {
         setCustomerCount();
         setGreenhouseCount();
         setOrderCount();
+        setSupplierCount();
+    }
+
+    private void setSupplierCount() {
+        try {
+            String suppCount = Integer.toString(suppModel.getSupplierCount());
+            txtSupplier.setText(suppCount);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void setOrderCount() {
@@ -78,7 +94,6 @@ public class DashBoardController {
             throw new RuntimeException(e);
         }
     }
-
 
     private void setGreenhouseCount() {
 
@@ -207,18 +222,19 @@ public class DashBoardController {
     }
     @FXML
     void ControlOnAction(ActionEvent event) throws IOException {
+
+
+    }
+
+
+    @FXML
+    void notifyOnAction(ActionEvent event) throws IOException {
         Parent rootNode = FXMLLoader.load(getClass().getResource("/view/Send_Mail.fxml"));
         Stage stage= (Stage) root1.getScene().getWindow();
 
         Scene scene= new Scene(rootNode);
         stage.setScene(scene);
         stage.centerOnScreen();
-
-    }
-
-
-    @FXML
-    void notifyOnAction(ActionEvent event) {
 
     }
 
