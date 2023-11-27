@@ -12,12 +12,12 @@
 
 <AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.ReportFormController">
     <children>
-        <Label layoutX="88.0" layoutY="33.0" opacity="0.5" prefHeight="120.0" prefWidth="602.0" text="Report form" textFill="#00c9b7">
+        <Label layoutX="88.0" layoutY="33.0" opacity="0.5" prefHeight="142.0" prefWidth="616.0" text="Report form" textFill="#00c9b7">
             <font>
                 <Font name="System Bold" size="91.0" />
             </font>
         </Label>
-      <Pane layoutX="148.0" layoutY="218.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="218.0">
+      <Pane layoutX="148.0" layoutY="231.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="205.0">
          <children>
             <JFXComboBox fx:id="cmbCustomer" layoutX="23.0" layoutY="91.0" prefHeight="32.0" prefWidth="211.0" promptText="Customer id" />
             <Text fill="WHITE" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
@@ -37,7 +37,7 @@
                 <Image url="@../assets/icons8-back-64.png" />
             </image>
         </ImageView>
-      <Pane layoutX="516.0" layoutY="217.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="218.0">
+      <Pane layoutX="516.0" layoutY="231.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="205.0">
          <children>
             <JFXComboBox fx:id="cmbEmpId" layoutX="23.0" layoutY="91.0" prefHeight="32.0" prefWidth="211.0" promptText="Employee id" />
             <Text fill="WHITE" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Details" wrappingWidth="168.474609375">
@@ -52,7 +52,7 @@
             </JFXButton>
          </children>
       </Pane>
-      <Pane layoutX="883.0" layoutY="218.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="218.0">
+      <Pane layoutX="883.0" layoutY="231.0" prefHeight="284.0" prefWidth="253.0" style="-fx-background-color: #00c9b7;" AnchorPane.bottomAnchor="205.0">
          <children>
             <JFXComboBox fx:id="cmbSuppId" layoutX="23.0" layoutY="91.0" prefHeight="32.0" prefWidth="211.0" promptText="Supplier id" />
             <Text fill="WHITE" layoutX="48.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Details">

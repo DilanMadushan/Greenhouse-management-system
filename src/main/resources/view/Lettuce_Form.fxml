@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="Anchor" prefHeight="728.0" prefWidth="1315.0" style="-fx-background-color: #f1f2f6;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.LettuceFormController">
+<AnchorPane fx:id="Anchor" prefHeight="728.0" prefWidth="1315.0" style="-fx-background-color: #f1f2f6;" stylesheets="@../css/table.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.LettuceFormController">
    <children>
       <JFXTextField fx:id="txtId" labelFloat="true" layoutX="56.0" layoutY="209.0" prefHeight="37.0" prefWidth="239.0" promptText="Lettuce id" AnchorPane.bottomAnchor="474.0" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="209.0">
          <font>

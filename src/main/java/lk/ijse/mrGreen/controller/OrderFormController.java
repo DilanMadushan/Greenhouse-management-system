@@ -24,12 +24,17 @@ import lk.ijse.mrGreen.dto.tm.CartTm;
 import model.CustomerModel;
 import model.LettuceModel;
 import model.OrderModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class OrderFormController {
@@ -225,7 +230,7 @@ public class OrderFormController {
         for(int i = 0; i < tblOrder.getItems().size(); i++){
             total+=(double)colTotal.getCellData(i);
         }
-        txtTotal.setText(Double.toString(total));
+        txtTotal.setText(Double.toString(total)+"0");
     }
 
     @FXML
@@ -239,7 +244,7 @@ public class OrderFormController {
     }
 
     @FXML
-    void placeOnAction(ActionEvent event) {
+    void placeOnAction(ActionEvent event) throws JRException {
         String orderId = oId.getText();
         LocalDate date = datePikker.getValue();
         String cus_id = (String) cmdCustomerId.getValue();
@@ -264,10 +269,31 @@ public class OrderFormController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        printBill(Double.parseDouble(txtTotal.getText()));
         clearAll();
         initialize();
 
 
+    }
+
+    private void printBill(double total) throws JRException {
+        JRBeanCollectionDataSource billData = new JRBeanCollectionDataSource(obList);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("CollectionBean",billData);
+        map.put("total",total);
+
+        InputStream resourceAsStream =  getClass().getResourceAsStream("/reports/bill2.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport jasperReport= JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                map,
+                new JREmptyDataSource()
+        );
+
+        JasperViewer.viewReport(jasperPrint,false);
     }
 
     @FXML
@@ -324,5 +350,6 @@ public class OrderFormController {
         txtQtyOnHand.clear();
         txtUnit.clear();
         obList.clear();
+        txtTotal.setText("");
     }
 }

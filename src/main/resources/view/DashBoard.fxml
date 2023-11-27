@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -215,6 +216,11 @@
       </Pane>
       <AnchorPane layoutX="156.0" layoutY="108.0" prefHeight="584.0" prefWidth="1099.0" style="-fx-background-radius: 30; -fx-background-color: white;" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="24.799999999999955">
          <children>
+            <Text layoutX="979.0" layoutY="547.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log out" textAlignment="CENTER" wrappingWidth="96.99999999999977">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
             <Pane layoutX="46.0" layoutY="43.0" prefHeight="153.0" prefWidth="281.0" style="-fx-background-color: #00C9B7; -fx-background-radius: 30;" AnchorPane.bottomAnchor="356.0" AnchorPane.topAnchor="75.0">
                <children>
                   <Text layoutX="115.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Greenhouses" textAlignment="CENTER" wrappingWidth="167.4404296874999">
@@ -347,10 +353,13 @@
                   </ImageView>
                </children>
             </Pane>
-            <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="1025.0" layoutY="515.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="930.0" layoutY="515.0" onMouseClicked="#backOnAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-back-64.png" />
                </image>
+               <effect>
+                  <Glow />
+               </effect>
             </ImageView>
          </children>
       </AnchorPane>
