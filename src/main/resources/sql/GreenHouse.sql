@@ -52,13 +52,6 @@ create table fertilizer(
     on update cascade on delete cascade
 );
 
-create table payment(
-    pay_id  varchar(30)primary key,
-    amount double not null,
-    date DATE not null,
-    type varchar(50) not null
-);
-
 create table customer(
     cus_id varchar(50)primary key ,
     name varchar(150)not null ,
@@ -124,21 +117,7 @@ create table greenhouse_employee_details(
 insert into supplier values ("S001","Kamal","Green Lanka","0763458370","U001");
 insert into supplier values ("S002","Nimal","jdbc","0764567890","U001");
 
-INSERT INTO fertilizer VALUES("F001","Uria","Jdbc",100.0,30,"S002","L002");
 
---
--- ALTER TABLE Persons
---     ALTER COLUMN City SET DEFAULT 'Sandnes';
---
--- alter table greenhouse drop column size;
-
--- insert into water_tank values (001,90,9.0);
---
-INSERT INTO greenhouse (g_id,name,water_temp,water_ph) VALUES ("G001","Deep",10,10.0);
-
-alter table order_details  add total double not null ;
-
-alter table user add email varchar(100)not null ;
 
 
 
