@@ -14,12 +14,12 @@
 
 <AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" stylesheets="@../css/table.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.GreenhouseFormController">
     <children>
-        <JFXTextField fx:id="txtId" labelFloat="true" layoutX="91.0" layoutY="236.0" prefHeight="37.0" prefWidth="239.0" promptText="Greenhouse id" AnchorPane.bottomAnchor="448.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="236.0">
+        <JFXTextField fx:id="txtId" labelFloat="true" layoutX="91.0" layoutY="236.0" onAction="#gIdOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Greenhouse id" AnchorPane.bottomAnchor="448.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="236.0">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtName" labelFloat="true" layoutX="385.0" layoutY="235.0" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.bottomAnchor="448.0" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="235.0">
+        <JFXTextField fx:id="txtName" labelFloat="true" layoutX="385.0" layoutY="235.0" onAction="#nameOnAction" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.bottomAnchor="448.0" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="235.0">
             <font>
                 <Font size="15.0" />
             </font>
@@ -67,7 +67,7 @@
             <TableColumn fx:id="colPh" prefWidth="108.0" text="Water ph" />
             </columns>
         </TableView>
-        <JFXTextField fx:id="txtTemp" labelFloat="true" layoutX="385.0" layoutY="351.0" prefHeight="37.0" prefWidth="239.0" promptText="Temperature" AnchorPane.bottomAnchor="332.0" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="351.0">
+        <JFXTextField fx:id="txtTemp" labelFloat="true" layoutX="385.0" layoutY="351.0" onAction="#tmpOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Temperature" AnchorPane.bottomAnchor="332.0" AnchorPane.leftAnchor="385.0" AnchorPane.rightAnchor="656.0" AnchorPane.topAnchor="351.0">
             <font>
                 <Font size="15.0" />
             </font>
@@ -77,6 +77,6 @@
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbLettuce" layoutX="91.0" layoutY="357.0" prefHeight="25.0" prefWidth="239.0" promptText="Lettuce id" AnchorPane.bottomAnchor="332.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="357.0" />
+      <JFXComboBox fx:id="cmbLettuce" labelFloat="true" layoutX="91.0" layoutY="357.0" onAction="#lIdOnAction" prefHeight="25.0" prefWidth="239.0" promptText="Lettuce id" AnchorPane.bottomAnchor="332.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="950.0" AnchorPane.topAnchor="357.0" />
     </children>
 </AnchorPane>

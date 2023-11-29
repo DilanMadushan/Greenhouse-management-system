@@ -107,6 +107,7 @@ public class OrderFormController {
         setLettuceId();
         datePikker.setValue(LocalDate.now());
         setCellValues();
+        cmdCustomerId.requestFocus();
     }
 
     private void setCellValues() {
@@ -269,19 +270,20 @@ public class OrderFormController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        printBill(Double.parseDouble(txtTotal.getText()));
+        printBill(Double.parseDouble(txtTotal.getText()),oId.getText());
         clearAll();
         initialize();
 
 
     }
 
-    private void printBill(double total) throws JRException {
+    private void printBill(double total,String id) throws JRException {
         JRBeanCollectionDataSource billData = new JRBeanCollectionDataSource(obList);
 
         Map<String, Object> map = new HashMap<>();
         map.put("CollectionBean",billData);
         map.put("total",total);
+        map.put("id",id);
 
         InputStream resourceAsStream =  getClass().getResourceAsStream("/reports/bill2.jrxml");
         JasperDesign load = JRXmlLoader.load(resourceAsStream);
@@ -316,6 +318,8 @@ public class OrderFormController {
             txtQtyOnHand.setText(Double.toString(dtoList.getQty()));
             txtUnit.setText(Double.toString(dtoList.getUnit()));
 
+            txtQty.requestFocus();
+
         } catch (Exception e) {
 
         }
@@ -328,6 +332,7 @@ public class OrderFormController {
         try {
             String Name = cusModel.getName(id);
             txtCusName.setText(Name);
+            cmbLettId.requestFocus();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -41,6 +41,7 @@
 	</subDataset>
 	<parameter name="CollectionBean" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<parameter name="total" class="java.lang.Double"/>
+	<parameter name="id" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -68,6 +69,26 @@
 			</staticText>
 		</band>
 	</title>
+	<pageHeader>
+		<band height="57">
+			<staticText>
+				<reportElement x="0" y="12" width="88" height="30" uuid="73fd9cca-1f8c-417d-8545-3f43c568f2fa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Id :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="72" y="14" width="71" height="30" uuid="1b330cf6-f037-4894-8550-7303e8234420">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Britannic Bold" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
 	<detail>
 		<band height="64" splitType="Stretch">
 			<componentElement>

@@ -36,9 +36,9 @@ public class ForgetFormController {
 
             System.out.println("Start");
             SendMailController.Mail mail = new SendMailController.Mail(); //creating an instance of Mail class
-            mail.setMsg(pw);
+            mail.setMsg("your password : "+pw);
             mail.setTo(email);
-            mail.setSubject("Password");
+            mail.setSubject("password");
 
             Thread thread = new Thread(mail);
             thread.start();
@@ -56,6 +56,11 @@ public class ForgetFormController {
         Stage stage = (Stage) txtUserName.getScene().getWindow();
         stage.close();
     }
+
+    public void nameOnAction(ActionEvent event) {
+        checkOnAction(event);
+    }
+
     public class Mail implements Runnable {
         private String msg;
         private String to;

@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lk.ijse.mrGreen.dto.UserDto;
+import lombok.SneakyThrows;
 import model.UserModel;
 
 import java.io.IOException;
@@ -91,5 +92,12 @@ public class LoginController {
         txtPAssWord.setText(txtPassword.getText());
         txtPAssWord.setVisible(true);
     }
+    @FXML
+    void userNameOnAction(ActionEvent event) {
+        txtPassword.requestFocus();
+    }
 
+    public void passwordOnAction(ActionEvent event) throws IOException {
+        loginOnAction(event);
+    }
 }

@@ -268,4 +268,20 @@ public class GreenhouseFormController {
         txtTemp.setText(colTemp.getCellData(index).toString());
         txtPh.setText(colPh.getCellData(index).toString());
     }
+
+    public void gIdOnAction(ActionEvent event) {
+        txtName.requestFocus();
+    }
+
+    public void nameOnAction(ActionEvent event) {
+        cmbLettuce.requestFocus();
+    }
+
+    public void tmpOnAction(ActionEvent event) {
+        txtPh.requestFocus();
+    }
+
+    public void lIdOnAction(ActionEvent event) {
+        txtTemp.requestFocus();
+    }
 }

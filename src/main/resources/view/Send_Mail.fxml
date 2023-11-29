@@ -23,19 +23,19 @@
                 <Image url="@../assets/icons8-back-64.png" />
             </image>
         </ImageView>
-      <JFXTextField fx:id="txtEmail" layoutX="191.0" layoutY="268.0" prefHeight="25.0" prefWidth="367.0" promptText="Email" AnchorPane.bottomAnchor="427.0" />
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="191.0" layoutY="268.0" onAction="#emailOnAction" prefHeight="25.0" prefWidth="367.0" promptText="Email" AnchorPane.bottomAnchor="427.0" />
       <Text layoutX="139.0" layoutY="274.3525390625" strokeType="OUTSIDE" strokeWidth="0.0" text="To:" wrappingWidth="29.318359375" AnchorPane.bottomAnchor="441.380859375">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtSubject" layoutX="190.0" layoutY="343.0" prefHeight="25.0" prefWidth="367.0" promptText="Subject" AnchorPane.bottomAnchor="352.0" />
+      <JFXTextField fx:id="txtSubject" labelFloat="true" layoutX="190.0" layoutY="343.0" onAction="#subjectOnAction" prefHeight="25.0" prefWidth="367.0" promptText="Subject" AnchorPane.bottomAnchor="352.0" />
       <Text layoutX="99.0" layoutY="357.5146484375" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject:" wrappingWidth="69.318359375" AnchorPane.bottomAnchor="358.21875">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <JFXTextArea fx:id="txtMessage" layoutX="190.0" layoutY="420.0" prefHeight="191.0" prefWidth="572.0" promptText="Enter Message" />
+      <JFXTextArea fx:id="txtMessage" labelFloat="true" layoutX="190.0" layoutY="420.0" prefHeight="191.0" prefWidth="572.0" promptText="Enter Message" />
       <Text layoutX="92.0" layoutY="437.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message:" wrappingWidth="75.318359375">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -49,7 +49,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label fx:id="lblStatus" layoutX="995.0" layoutY="589.0" textFill="#0f23d6" />
+      <Label fx:id="lblStatus" layoutX="995.0" layoutY="589.0" textFill="#0f23d6">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
       <ImageView fitHeight="585.0" fitWidth="702.0" layoutX="578.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/logo.png" />

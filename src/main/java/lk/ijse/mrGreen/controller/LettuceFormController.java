@@ -326,4 +326,32 @@ public class LettuceFormController {
         txtunit.setText(colUnit.getCellData(index).toString());
         cmbSupId.setValue(colSupId.getCellData(index).toString());
     }
+
+    public void lIdOnAction(ActionEvent event) {
+        txtName.requestFocus();
+    }
+
+    public void tempOnAction(ActionEvent event) {
+        txtHumid.requestFocus();
+    }
+
+    public void nameOnAction(ActionEvent event) {
+        txtQty.requestFocus();
+    }
+
+    public void qtyOnAction(ActionEvent event) {
+        txtSeedQty.requestFocus();
+    }
+
+    public void humidOnAction(ActionEvent event) {
+        txtunit.requestFocus();
+    }
+
+    public void priceOnAction(ActionEvent event) {
+        cmbSupId.requestFocus();
+    }
+
+    public void seedOnAction(ActionEvent event) {
+        txtTemp.requestFocus();
+    }
 }

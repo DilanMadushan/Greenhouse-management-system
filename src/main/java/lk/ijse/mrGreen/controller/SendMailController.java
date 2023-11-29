@@ -73,8 +73,15 @@ public class SendMailController {
 
             System.out.println("end");
             lblStatus.setText("sent successfully");
+            clearFields();
 
         }
+    }
+
+    private void clearFields() {
+        txtEmail.clear();
+        txtMessage.clear();
+        txtSubject.clear();
     }
 
     private boolean validation() {
@@ -85,6 +92,14 @@ public class SendMailController {
             return false;
         }
         return true;
+    }
+
+    public void emailOnAction(ActionEvent event) {
+        txtSubject.requestFocus();
+    }
+
+    public void subjectOnAction(ActionEvent event) {
+        txtMessage.requestFocus();
     }
 
     public static class Mail implements Runnable{

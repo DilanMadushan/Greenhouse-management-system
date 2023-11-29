@@ -30,12 +30,12 @@
                   <Font name="System Bold" size="40.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtNmae" labelFloat="true" layoutX="79.0" layoutY="243.0" prefHeight="34.0" prefWidth="294.0" promptText="Username" AnchorPane.rightAnchor="95.0">
+            <JFXTextField fx:id="txtNmae" labelFloat="true" layoutX="79.0" layoutY="243.0" onAction="#userNameOnAction" prefHeight="34.0" prefWidth="294.0" promptText="Username" AnchorPane.rightAnchor="95.0">
                <font>
                   <Font size="15.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="79.0" layoutY="328.0" prefHeight="25.0" prefWidth="294.0" promptText="Password" AnchorPane.bottomAnchor="359.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="328.0">
+            <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="79.0" layoutY="328.0" onAction="#passwordOnAction" prefHeight="25.0" prefWidth="294.0" promptText="Password" AnchorPane.bottomAnchor="359.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="328.0">
                <font>
                   <Font size="15.0" />
                </font>

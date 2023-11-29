@@ -226,4 +226,16 @@ public class CustomerFormController {
         txtAddress.setText(colAddress.getCellData(index).toString());
         txtPhone.setText(colPhone.getCellData(index).toString());
     }
+
+    public void nameOnAction(ActionEvent event) {
+        txtAddress.requestFocus();
+    }
+
+    public void addressOnAction(ActionEvent event) {
+        txtPhone.requestFocus();
+    }
+
+    public void idOnAction(ActionEvent event) {
+       txtName.requestFocus();
+    }
 }

@@ -16,7 +16,7 @@
             <Font size="48.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="76.99999999999997" layoutY="192.0" prefHeight="26.0" prefWidth="214.0" promptText="User name" AnchorPane.leftAnchor="76.99999999999997" AnchorPane.rightAnchor="81.60000000000002">
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="76.99999999999997" layoutY="192.0" onAction="#nameOnAction" prefHeight="26.0" prefWidth="214.0" promptText="User name" AnchorPane.leftAnchor="76.99999999999997" AnchorPane.rightAnchor="81.60000000000002">
          <font>
             <Font size="14.0" />
          </font>

@@ -13,17 +13,17 @@
 
 <AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" stylesheets="@../css/table.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.EmployeeFormController">
     <children>
-        <JFXTextField fx:id="txtId" labelFloat="true" layoutX="91.0" layoutY="215.0" prefHeight="37.0" prefWidth="239.0" promptText="Employee id" AnchorPane.bottomAnchor="468.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="215.0">
+        <JFXTextField fx:id="txtId" labelFloat="true" layoutX="91.0" layoutY="215.0" onAction="#idOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Employee id" AnchorPane.bottomAnchor="468.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="215.0">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtName" labelFloat="true" layoutX="380.0" layoutY="215.0" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="215.0">
+        <JFXTextField fx:id="txtName" labelFloat="true" layoutX="380.0" layoutY="215.0" onAction="#nameOnAction" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="215.0">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtAge" labelFloat="true" layoutX="91.0" layoutY="321.0" prefHeight="37.0" prefWidth="239.0" promptText="age" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="321.0">
+        <JFXTextField fx:id="txtAge" labelFloat="true" layoutX="91.0" layoutY="321.0" onAction="#ageOnAction" prefHeight="37.0" prefWidth="239.0" promptText="age" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="321.0">
             <font>
                 <Font size="15.0" />
             </font>
@@ -72,12 +72,12 @@
                 <TableColumn fx:id="colSalary" prefWidth="96.0" text="Salary" />
             </columns>
         </TableView>
-        <JFXTextField fx:id="txtJob" labelFloat="true" layoutX="91.0" layoutY="433.0" prefHeight="37.0" prefWidth="239.0" promptText="Job role" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="433.0">
+        <JFXTextField fx:id="txtJob" labelFloat="true" layoutX="91.0" layoutY="433.0" onAction="#jobOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Job role" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="433.0">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="380.0" layoutY="321.0" prefHeight="37.0" prefWidth="239.0" promptText="Address">
+        <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="380.0" layoutY="321.0" onAction="#addressOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Address">
             <font>
                 <Font size="15.0" />
             </font>

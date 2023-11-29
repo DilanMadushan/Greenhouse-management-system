@@ -269,4 +269,20 @@ public class SupplierFormController {
         txtPhone.setText(colPhone.getCellData(index).toString());
         cmbUserId.setValue(colUser.getCellData(index).toString());
     }
+
+    public void suppIdOnAction(ActionEvent event) {
+        txtName.requestFocus();
+    }
+
+    public void nameOnAction(ActionEvent event) {
+        txtCompany.requestFocus();
+    }
+
+    public void companyOnAction(ActionEvent event) {
+        txtPhone.requestFocus();
+    }
+
+    public void phoneOnAction(ActionEvent event) {
+        cmbUserId.requestFocus();
+    }
 }

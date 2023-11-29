@@ -241,4 +241,16 @@ public class ReportFormController {
         JasperViewer.viewReport(jasperPrint,false);
 
     }
+
+    public void empIdOnAction(ActionEvent event) {
+        EmployeeReportOnAction(event);
+    }
+
+    public void suppIdOnAction(ActionEvent event) {
+        supplierReportOnAction(event);
+    }
+
+    public void cusIdOnAction(ActionEvent event) throws JRException, SQLException {
+        CustomerReportOnAction(event);
+    }
 }

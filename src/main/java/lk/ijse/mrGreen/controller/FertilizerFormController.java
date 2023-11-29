@@ -336,4 +336,28 @@ public class FertilizerFormController {
         cmbSupId.setValue(colSupID.getCellData(index).toString());
         cmbLettId.setValue(colLettId.getCellData(index).toString());
     }
+
+    public void nameOnAction(ActionEvent event) {
+        txtCompany.requestFocus();
+    }
+
+    public void companyOnAction(ActionEvent event) {
+        txtUnit.requestFocus();
+    }
+
+    public void fidOnAction(ActionEvent event) {
+        txtName.requestFocus();
+    }
+
+    public void suppIdOnAction(ActionEvent event) {
+        cmbLettId.requestFocus();
+    }
+
+    public void priceOnAction(ActionEvent event) {
+        txtQty.requestFocus();
+    }
+
+    public void qtyOnAction(ActionEvent event) {
+        cmbSupId.requestFocus();
+    }
 }

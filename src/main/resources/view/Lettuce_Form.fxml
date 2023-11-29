@@ -14,22 +14,22 @@
 
 <AnchorPane fx:id="Anchor" prefHeight="728.0" prefWidth="1315.0" style="-fx-background-color: #f1f2f6;" stylesheets="@../css/table.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.LettuceFormController">
    <children>
-      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="56.0" layoutY="209.0" prefHeight="37.0" prefWidth="239.0" promptText="Lettuce id" AnchorPane.bottomAnchor="474.0" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="209.0">
+      <JFXTextField fx:id="txtId" labelFloat="true" layoutX="56.0" layoutY="209.0" onAction="#lIdOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Lettuce id" AnchorPane.bottomAnchor="474.0" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="209.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtTemp" labelFloat="true" layoutX="56.0" layoutY="403.0" prefHeight="37.0" prefWidth="239.0" promptText="Temperature" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="403.0">
+      <JFXTextField fx:id="txtTemp" labelFloat="true" layoutX="56.0" layoutY="403.0" onAction="#tempOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Temperature" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="403.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="345.0" layoutY="209.0" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="209.0">
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="345.0" layoutY="209.0" onAction="#nameOnAction" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.bottomAnchor="474.0" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="209.0">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="56.0" layoutY="305.0" prefHeight="37.0" prefWidth="239.0" promptText="QTY on hand" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="305.0">
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="56.0" layoutY="305.0" onAction="#qtyOnAction" prefHeight="37.0" prefWidth="239.0" promptText="QTY on hand" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="305.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -39,7 +39,7 @@
             <Font name="System Bold" size="73.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtHumid" labelFloat="true" layoutX="345.0" layoutY="403.0" prefHeight="37.0" prefWidth="239.0" promptText="Humidity" AnchorPane.leftAnchor="345.0">
+      <JFXTextField fx:id="txtHumid" labelFloat="true" layoutX="345.0" layoutY="403.0" onAction="#humidOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Humidity" AnchorPane.leftAnchor="345.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -74,7 +74,7 @@
          </image>
       </ImageView>
       <JFXComboBox fx:id="cmbSupId" editable="true" labelFloat="true" layoutX="56.0" layoutY="494.0" prefHeight="25.0" prefWidth="239.0" promptText="Supplier id" unFocusColor="BLACK" AnchorPane.rightAnchor="731.0" />
-      <JFXTextField fx:id="txtunit" labelFloat="true" layoutX="56.0" layoutY="483.0" prefHeight="37.0" prefWidth="239.0" promptText="Unit price" AnchorPane.rightAnchor="1020.0">
+      <JFXTextField fx:id="txtunit" labelFloat="true" layoutX="56.0" layoutY="483.0" onAction="#priceOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Unit price" AnchorPane.rightAnchor="1020.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -91,7 +91,7 @@
             <TableColumn fx:id="colSupId" prefWidth="76.0" text="Sup Id" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtSeedQty" labelFloat="true" layoutX="338.0" layoutY="303.0" prefHeight="37.0" prefWidth="239.0" promptText="Seed qty">
+      <JFXTextField fx:id="txtSeedQty" labelFloat="true" layoutX="338.0" layoutY="303.0" onAction="#seedOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Seed qty">
          <font>
             <Font size="15.0" />
          </font>

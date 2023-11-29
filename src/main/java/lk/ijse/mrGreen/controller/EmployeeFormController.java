@@ -270,4 +270,24 @@ public class EmployeeFormController {
         txtJob.setText(colJob.getCellData(index).toString());
         txtSalary.setText(colSalary.getCellData(index).toString());
     }
+
+    public void idOnAction(ActionEvent event) {
+        txtName.requestFocus();
+    }
+
+    public void nameOnAction(ActionEvent event) {
+        txtAge.requestFocus();
+    }
+
+    public void ageOnAction(ActionEvent event) {
+        txtAddress.requestFocus();
+    }
+
+    public void jobOnAction(ActionEvent event) {
+        txtSalary.requestFocus();
+    }
+
+    public void addressOnAction(ActionEvent event) {
+        txtJob.requestFocus();
+    }
 }

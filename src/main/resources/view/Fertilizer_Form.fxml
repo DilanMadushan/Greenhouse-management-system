@@ -14,17 +14,17 @@
 
 <AnchorPane fx:id="Anchor" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f1f2f6;" stylesheets="@../css/table.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mrGreen.controller.FertilizerFormController">
     <children>
-        <JFXTextField fx:id="txtId" labelFloat="true" layoutX="91.0" layoutY="225.0" prefHeight="37.0" prefWidth="239.0" promptText="Fertilizer id" AnchorPane.bottomAnchor="458.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="225.0">
+        <JFXTextField fx:id="txtId" labelFloat="true" layoutX="91.0" layoutY="225.0" onAction="#fidOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Fertilizer id" AnchorPane.bottomAnchor="458.0" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="225.0">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtName" labelFloat="true" layoutX="380.0" layoutY="225.0" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="225.0">
+        <JFXTextField fx:id="txtName" labelFloat="true" layoutX="380.0" layoutY="225.0" onAction="#nameOnAction" prefHeight="37.0" prefWidth="239.0" promptText="name" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="225.0">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="txtCompany" labelFloat="true" layoutX="91.0" layoutY="321.0" prefHeight="37.0" prefWidth="239.0" promptText="Company" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="321.0">
+        <JFXTextField fx:id="txtCompany" labelFloat="true" layoutX="91.0" layoutY="321.0" onAction="#companyOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Company" AnchorPane.leftAnchor="91.0" AnchorPane.topAnchor="321.0">
             <font>
                 <Font size="15.0" />
             </font>
@@ -63,7 +63,7 @@
                 <Image url="@../assets/icons8-back-64.png" />
             </image>
         </ImageView>
-        <JFXComboBox fx:id="cmbSupId" editable="true" labelFloat="true" layoutX="380.0" layoutY="426.0" prefHeight="25.0" prefWidth="239.0" promptText="Supplier id" unFocusColor="BLACK" />
+        <JFXComboBox fx:id="cmbSupId" editable="true" labelFloat="true" layoutX="380.0" layoutY="426.0" onAction="#suppIdOnAction" prefHeight="25.0" prefWidth="239.0" promptText="Supplier id" unFocusColor="BLACK" />
         <TableView fx:id="tblFertilizer" layoutX="656.0" layoutY="165.0" onMouseClicked="#mouseClickOnAction" prefHeight="412.0" prefWidth="609.0">
             <columns>
                 <TableColumn fx:id="colId" prefWidth="72.0" text="Id" />
@@ -76,12 +76,12 @@
             </columns>
         </TableView>
       <JFXComboBox fx:id="cmbLettId" editable="true" labelFloat="true" layoutX="91.0" layoutY="507.0" prefHeight="25.0" prefWidth="239.0" promptText="Lettuce id" unFocusColor="BLACK" />
-      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="90.0" layoutY="414.0" prefHeight="37.0" prefWidth="239.0" promptText="Quantity">
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="90.0" layoutY="414.0" onAction="#qtyOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Quantity">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtUnit" labelFloat="true" layoutX="380.0" layoutY="321.0" prefHeight="37.0" prefWidth="239.0" promptText="Unit price">
+      <JFXTextField fx:id="txtUnit" labelFloat="true" layoutX="380.0" layoutY="321.0" onAction="#priceOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Unit price">
          <font>
             <Font size="15.0" />
          </font>
