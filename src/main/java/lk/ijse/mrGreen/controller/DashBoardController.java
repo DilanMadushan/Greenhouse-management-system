@@ -20,11 +20,9 @@ import model.*;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
 import java.util.Optional;
 
 
@@ -149,12 +147,12 @@ public class DashBoardController {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
-        DateFormat date = new SimpleDateFormat("yyy:MM:dd");
-        Calendar cal = Calendar.getInstance();
+        LocalDate localDate = LocalDate.now();
 
-        year = cal.get(Calendar.YEAR);
-        month = cal.get(Calendar.MONTH);
-        datee = cal.get(Calendar.DATE);
+        year= localDate.getYear();
+        month=localDate.getMonthValue();
+        datee=localDate.getDayOfMonth();
+
         txtDate.setText(year + " : " + month + " : " + datee);
     }
 

@@ -61,12 +61,12 @@ public class LoginController {
                     stage.setScene(scene);
                     stage.centerOnScreen();
                 }else {
-                    new Alert(Alert.AlertType.WARNING, "Incorrect username or password").show();
+                    new Alert(Alert.AlertType.ERROR, "Incorrect username or password").show();
                 }
 
             }
             else{
-                new Alert(Alert.AlertType.WARNING, "Incorrect username or password").show();
+                new Alert(Alert.AlertType.ERROR, "Incorrect username or password").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

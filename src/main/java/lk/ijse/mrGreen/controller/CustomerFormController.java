@@ -145,7 +145,7 @@ public class CustomerFormController {
         }
 
        // int tel =Integer.parseInt(txtPhone.getText());
-        boolean telMatch = Pattern.matches("[0-9]{10}",txtPhone.getText());
+        boolean telMatch = Pattern.matches("[0-9]{9}",txtPhone.getText());
         if (!telMatch) {
             new Alert(Alert.AlertType.ERROR,"invalid tel").show();
             return false;
