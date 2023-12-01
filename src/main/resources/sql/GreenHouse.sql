@@ -7,7 +7,7 @@ create table user(
     user_id varchar(15)primary key ,
     name varchar(100)not null,
     password varchar(20)not null,
-    job_role varchar(50)not null
+    job_role varchar(50)not null,
     email varchar(100)not null
 );
 
