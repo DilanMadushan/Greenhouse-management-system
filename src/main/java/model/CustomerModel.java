@@ -19,7 +19,7 @@ public class CustomerModel {
         pstm.setString(1,dto.getId());
         pstm.setString(2,dto.getName());
         pstm.setString(3,dto.getAddress());
-        pstm.setInt(4,dto.getTel());
+        pstm.setString(4,dto.getTel());
 
         try{
             return pstm.executeUpdate() > 0;
@@ -51,7 +51,7 @@ public class CustomerModel {
 
         pstm.setString(1,dto.getName());
         pstm.setString(2,dto.getAddress());
-        pstm.setInt(3, dto.getTel());
+        pstm.setString(3, dto.getTel());
         pstm.setString(4,dto.getId());
 
         try{
@@ -76,7 +76,7 @@ public class CustomerModel {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    resultSet.getInt(4)
+                    resultSet.getString(4)
             ));
         }
         return dto;
@@ -128,7 +128,7 @@ public class CustomerModel {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    resultSet.getInt(4)
+                    resultSet.getString(4)
             );
         }
         return dto;

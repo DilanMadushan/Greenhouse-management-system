@@ -27,7 +27,7 @@ public class SupplierModel {
                 resultSet.getString(1),
                 resultSet.getString(2),
                 resultSet.getString(3),
-                resultSet.getInt(4),
+                resultSet.getString(4),
                 resultSet.getString(5)
             ));
 
@@ -45,7 +45,7 @@ public class SupplierModel {
         pstm.setString(1,dto.getSup_id());
         pstm.setString(2,dto.getName());
         pstm.setString(3, dto.getCompany());
-        pstm.setInt(4,dto.getTel());
+        pstm.setString(4,dto.getTel());
         pstm.setString(5,dto.getUser_id());
 
         try {
@@ -73,7 +73,7 @@ public class SupplierModel {
 
         pstm.setString(1,dto.getName());
         pstm.setString(2, dto.getCompany());
-        pstm.setInt(3,dto.getTel());
+        pstm.setString(3,dto.getTel());
         pstm.setString(4,dto.getUser_id());
         pstm.setString(5,dto.getSup_id());
 
@@ -109,7 +109,7 @@ public class SupplierModel {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    resultSet.getInt(4),
+                    resultSet.getString(4),
                     resultSet.getString(5)
             );
         }

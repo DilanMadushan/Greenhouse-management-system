@@ -13,6 +13,6 @@ public class SupplierTm {
     private String sup_id;
     private String name;
     private String company;
-    private int tel;
+    private String tel;
     private String User_id;
 }

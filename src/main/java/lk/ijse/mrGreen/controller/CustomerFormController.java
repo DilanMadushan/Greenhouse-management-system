@@ -101,7 +101,7 @@ public class CustomerFormController {
             String id = txtId.getText();
             String name = txtName.getText();
             String address = txtAddress.getText();
-            int tel = Integer.parseInt(txtPhone.getText());
+            String tel = txtPhone.getText();
 
             CustomerDto dto = new CustomerDto(id, name, address, tel);
 
@@ -145,7 +145,7 @@ public class CustomerFormController {
         }
 
        // int tel =Integer.parseInt(txtPhone.getText());
-        boolean telMatch = Pattern.matches("[0-9]{9}",txtPhone.getText());
+        boolean telMatch = Pattern.matches("[0-9]{10}",txtPhone.getText());
         if (!telMatch) {
             new Alert(Alert.AlertType.ERROR,"invalid tel").show();
             return false;
@@ -180,7 +180,7 @@ public class CustomerFormController {
             String id = txtId.getText();
             String name = txtName.getText();
             String address = txtAddress.getText();
-            int tel = Integer.parseInt(txtPhone.getText());
+            String tel = txtPhone.getText();
 
             CustomerDto dto = new CustomerDto(id, name, address, tel);
 

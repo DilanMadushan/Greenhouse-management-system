@@ -29,7 +29,7 @@
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="56.0" layoutY="305.0" onAction="#qtyOnAction" prefHeight="37.0" prefWidth="239.0" promptText="QTY on hand" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="305.0">
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="56.0" layoutY="305.0" onAction="#qtyOnAction" prefHeight="37.0" prefWidth="239.0" promptText="QTY on hand (Kg)" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="305.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -91,7 +91,7 @@
             <TableColumn fx:id="colSupId" prefWidth="76.0" text="Sup Id" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtSeedQty" labelFloat="true" layoutX="338.0" layoutY="303.0" onAction="#seedOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Seed qty">
+      <JFXTextField fx:id="txtSeedQty" labelFloat="true" layoutX="338.0" layoutY="303.0" onAction="#seedOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Seed qty (Kg)">
          <font>
             <Font size="15.0" />
          </font>

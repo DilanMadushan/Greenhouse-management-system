@@ -76,7 +76,7 @@
             </columns>
         </TableView>
       <JFXComboBox fx:id="cmbLettId" editable="true" labelFloat="true" layoutX="91.0" layoutY="507.0" prefHeight="25.0" prefWidth="239.0" promptText="Lettuce id" unFocusColor="BLACK" />
-      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="90.0" layoutY="414.0" onAction="#qtyOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Quantity">
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="90.0" layoutY="414.0" onAction="#qtyOnAction" prefHeight="37.0" prefWidth="239.0" promptText="Quantity (Kg)">
          <font>
             <Font size="15.0" />
          </font>

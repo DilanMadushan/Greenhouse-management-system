@@ -131,7 +131,7 @@ public class ReportFormController {
         hashMap.put("id",dto.getId());
         hashMap.put("name",dto.getName());
         hashMap.put("address",dto.getAddress());
-        hashMap.put("tel",Integer.toString(dto.getTel()));
+        hashMap.put("tel",dto.getTel());
 
 
         InputStream resourceAsStream =  getClass().getResourceAsStream("/reports/CustomerDetils.jrxml");
@@ -224,7 +224,7 @@ public class ReportFormController {
         hashMap.put("id",dto.getSup_id());
         hashMap.put("name",dto.getName());
         hashMap.put("company",dto.getCompany());
-        hashMap.put("tel",Integer.toString(dto.getTel()));
+        hashMap.put("tel",dto.getTel());
 
 
 

@@ -208,7 +208,7 @@ public class FertilizerFormController {
         }
 
         String name = txtName.getText();
-        boolean nameMAtch = Pattern.matches("[A-za-z\\s]{4,}",name);
+        boolean nameMAtch = Pattern.matches("[A-za-z\\s\\d]{1,}",name);
         if (!nameMAtch) {
             new Alert(Alert.AlertType.ERROR,"invalid name").show();
             return false;

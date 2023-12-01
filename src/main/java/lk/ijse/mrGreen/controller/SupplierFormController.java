@@ -128,7 +128,7 @@ public class SupplierFormController {
             String id = txtId.getText();
             String name = txtName.getText();
             String company = txtCompany.getText();
-            int tel = Integer.parseInt(txtPhone.getText());
+            String tel = txtPhone.getText();
             String userId = (String) cmbUserId.getValue();
 
             var dto = new SupplierDto(id, name, company, tel, userId);
@@ -174,7 +174,7 @@ public class SupplierFormController {
         }
 
         //int tel = Integer.parseInt(txtPhone.getText());
-        boolean telMatch = Pattern.matches("[0-9]{9}",txtPhone.getText());
+        boolean telMatch = Pattern.matches("[0-9]{10}",txtPhone.getText());
         if (!telMatch) {
             new Alert(Alert.AlertType.ERROR,"invalid tel").show();
             return false;
@@ -217,7 +217,7 @@ public class SupplierFormController {
             String id = txtId.getText();
             String name = txtName.getText();
             String company = txtCompany.getText();
-            int tel = Integer.parseInt(txtPhone.getText());
+            String tel = txtPhone.getText();
             String userId = (String) cmbUserId.getValue();
 
             System.out.println(tel);
