@@ -56,7 +56,7 @@ create table customer(
     cus_id varchar(50)primary key ,
     name varchar(150)not null ,
     address varchar(100)not null ,
-    tel varchar not null
+    tel varchar(50)not null
 );
 
 create table orders(
